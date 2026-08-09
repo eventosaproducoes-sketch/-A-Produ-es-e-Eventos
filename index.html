@@ -3,91 +3,198 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Produções e Eventos</title>
+
+<title>A Produções & Eventos</title>
 
 <style>
-* {
-    box-sizing: border-box;
+*{box-sizing:border-box}
+
+body{
+    margin:0;
+    font-family:Arial,sans-serif;
+    background:#f4f4f4;
+    color:#171717
 }
 
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background: #f5f5f5;
-    color: #222;
+header{
+    background:linear-gradient(135deg,#111,#292929);
+    color:white;
+    padding:38px 20px;
+    text-align:center
 }
 
-header {
-    background: #111;
-    color: white;
-    text-align: center;
-    padding: 30px 20px;
+header h1{
+    margin:0;
+    font-size:32px
 }
 
-header h1 {
-    margin: 0;
-    font-size: 30px;
+header p{
+    font-size:17px;
+    margin:12px 0 0;
+    color:#ddd
 }
 
-header p {
-    margin: 10px 0 0;
-    color: #ddd;
+.container{
+    max-width:700px;
+    margin:auto;
+    padding:22px
 }
 
-.container {
-    max-width: 600px;
-    margin: auto;
-    padding: 20px;
+.search{
+    width:100%;
+    padding:16px;
+    border:0;
+    border-radius:12px;
+    font-size:16px;
+    margin-bottom:18px;
+    box-shadow:0 2px 10px #ddd
 }
 
-.titulo {
-    text-align: center;
-    margin-bottom: 20px;
+.categories{
+    display:flex;
+    gap:8px;
+    overflow-x:auto;
+    margin-bottom:22px
 }
 
-.card {
-    background: white;
-    border-radius: 16px;
-    margin-bottom: 18px;
-    padding: 20px;
-    box-shadow: 0 3px 12px rgba(0,0,0,0.10);
+.categories button{
+    border:0;
+    background:#fff;
+    padding:11px 16px;
+    border-radius:25px;
+    white-space:nowrap;
+    font-weight:bold
 }
 
-.card h2 {
-    margin-top: 0;
+.categories button:hover{
+    background:#111;
+    color:white
 }
 
-.preco {
-    font-size: 25px;
-    font-weight: bold;
-    margin: 12px 0;
+.card{
+    background:white;
+    border-radius:20px;
+    overflow:hidden;
+    margin-bottom:20px;
+    box-shadow:0 4px 18px rgba(0,0,0,.10)
 }
 
-.info {
-    color: #666;
-    line-height: 1.5;
+.photo{
+    height:180px;
+    background:linear-gradient(135deg,#222,#777);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:65px
 }
 
-.botao {
-    display: block;
-    text-align: center;
-    background: #111;
-    color: white;
-    text-decoration: none;
-    padding: 14px;
-    border-radius: 10px;
-    margin-top: 15px;
-    font-weight: bold;
+.content{
+    padding:20px
 }
 
-.botao:hover {
-    opacity: 0.85;
+.content h2{
+    margin:0 0 8px
 }
 
-footer {
-    text-align: center;
-    padding: 30px;
-    color: #777;
+.tag{
+    display:inline-block;
+    background:#eee;
+    padding:6px 10px;
+    border-radius:20px;
+    font-size:13px;
+    margin-bottom:10px
+}
+
+.description{
+    color:#666;
+    line-height:1.5
+}
+
+.price{
+    font-size:23px;
+    font-weight:bold;
+    margin:15px 0
+}
+
+.buttons{
+    display:flex;
+    gap:10px
+}
+
+.btn{
+    flex:1;
+    border:0;
+    padding:14px;
+    border-radius:11px;
+    font-weight:bold;
+    text-decoration:none;
+    text-align:center;
+    cursor:pointer
+}
+
+.profile{
+    background:#eee;
+    color:#111
+}
+
+.hire{
+    background:#111;
+    color:white
+}
+
+.section-title{
+    text-align:center;
+    margin:10px 0 20px
+}
+
+footer{
+    text-align:center;
+    padding:30px 20px;
+    color:#777
+}
+
+.modal{
+    display:none;
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.7);
+    padding:20px;
+    z-index:10
+}
+
+.modal-box{
+    background:white;
+    max-width:500px;
+    margin:50px auto;
+    border-radius:20px;
+    padding:25px
+}
+
+.close{
+    float:right;
+    font-size:25px;
+    cursor:pointer
+}
+
+.form input,
+.form select{
+    width:100%;
+    padding:14px;
+    margin:7px 0;
+    border:1px solid #ddd;
+    border-radius:10px;
+    font-size:15px
+}
+
+.form button{
+    width:100%;
+    padding:15px;
+    border:0;
+    border-radius:10px;
+    background:#111;
+    color:white;
+    font-weight:bold;
+    margin-top:10px
 }
 </style>
 </head>
@@ -95,78 +202,381 @@ footer {
 <body>
 
 <header>
-    <h1>🎤 Produções e Eventos</h1>
+    <h1>🎤 A Produções & Eventos</h1>
     <p>Encontre músicos e bandas para o seu evento</p>
 </header>
 
 <div class="container">
 
-    <div class="titulo">
-        <h2>🎶 Artistas disponíveis</h2>
-        <p>Escolha a atração ideal para sua festa ou evento.</p>
+    <input
+        class="search"
+        id="search"
+        type="text"
+        placeholder="🔎 Procurar músico ou banda..."
+        onkeyup="filtrar()"
+    >
+
+    <div class="categories">
+        <button onclick="categoria('Todos')">Todos</button>
+        <button onclick="categoria('Samba')">🎶 Samba</button>
+        <button onclick="categoria('Pagode')">🥁 Pagode</button>
+        <button onclick="categoria('MPB')">🎸 MPB</button>
+        <button onclick="categoria('Banda')">🎤 Bandas</button>
     </div>
 
-    <div class="card">
-        <h2>🎤 AdaSamba</h2>
-        <p class="info">
-            Samba • Pagode • MPB<br>
-            Apresentação para festas, bares, eventos e confraternizações.
-        </p>
+    <h2 class="section-title">Artistas disponíveis</h2>
 
-        <div class="preco">A partir de R$ 800</div>
+    <div id="catalogo">
 
-        <a class="botao" href="#">
-            VER PERFIL
-        </a>
+        <div class="card artista" data-categoria="Samba Pagode MPB">
+
+            <div class="photo">🎤</div>
+
+            <div class="content">
+
+                <span class="tag">Samba • Pagode • MPB</span>
+
+                <h2>AdaSamba</h2>
+
+                <p class="description">
+                    Samba ao vivo para festas, bares,
+                    aniversários, eventos e confraternizações.
+                </p>
+
+                <div class="price">
+                    A partir de R$ 800
+                </div>
+
+                <div class="buttons">
+
+                    <button class="btn profile"
+                    onclick="perfil('AdaSamba')">
+                        VER PERFIL
+                    </button>
+
+                    <button class="btn hire"
+                    onclick="contratar('AdaSamba')">
+                        CONTRATAR
+                    </button>
+
+                </div>
+
+            </div>
+        </div>
+
+
+        <div class="card artista" data-categoria="Samba Pagode">
+
+            <div class="photo">🥁</div>
+
+            <div class="content">
+
+                <span class="tag">Samba • Pagode</span>
+
+                <h2>Samba Trio</h2>
+
+                <p class="description">
+                    Formação com 3 músicos.
+                    Apresentação de até 4 horas.
+                </p>
+
+                <div class="price">
+                    R$ 800
+                </div>
+
+                <div class="buttons">
+
+                    <button class="btn profile"
+                    onclick="perfil('Samba Trio')">
+                        VER PERFIL
+                    </button>
+
+                    <button class="btn hire"
+                    onclick="contratar('Samba Trio')">
+                        CONTRATAR
+                    </button>
+
+                </div>
+
+            </div>
+        </div>
+
+
+        <div class="card artista" data-categoria="Samba Pagode">
+
+            <div class="photo">🎶</div>
+
+            <div class="content">
+
+                <span class="tag">Samba • Pagode</span>
+
+                <h2>Samba 4 Integrantes</h2>
+
+                <p class="description">
+                    Formação com 4 músicos.
+                    Apresentação de até 4 horas.
+                </p>
+
+                <div class="price">
+                    R$ 1.500
+                </div>
+
+                <div class="buttons">
+
+                    <button class="btn profile"
+                    onclick="perfil('Samba 4 Integrantes')">
+                        VER PERFIL
+                    </button>
+
+                    <button class="btn hire"
+                    onclick="contratar('Samba 4 Integrantes')">
+                        CONTRATAR
+                    </button>
+
+                </div>
+
+            </div>
+        </div>
+
+
+        <div class="card artista" data-categoria="Samba Pagode Banda">
+
+            <div class="photo">🎵</div>
+
+            <div class="content">
+
+                <span class="tag">Samba • Banda</span>
+
+                <h2>Samba 6 Integrantes</h2>
+
+                <p class="description">
+                    Formação completa para eventos
+                    que precisam de uma apresentação maior.
+                </p>
+
+                <div class="price">
+                    R$ 2.000
+                </div>
+
+                <div class="buttons">
+
+                    <button class="btn profile"
+                    onclick="perfil('Samba 6 Integrantes')">
+                        VER PERFIL
+                    </button>
+
+                    <button class="btn hire"
+                    onclick="contratar('Samba 6 Integrantes')">
+                        CONTRATAR
+                    </button>
+
+                </div>
+
+            </div>
+        </div>
+
     </div>
-
-    <div class="card">
-        <h2>🎶 Samba Trio</h2>
-        <p class="info">
-            Formação com 3 músicos<br>
-            Até 4 horas de apresentação.
-        </p>
-
-        <div class="preco">R$ 800</div>
-
-        <a class="botao" href="#">
-            SOLICITAR CONTRATAÇÃO
-        </a>
-    </div>
-
-    <div class="card">
-        <h2>🎵 Samba 4 Integrantes</h2>
-        <p class="info">
-            Formação com 4 músicos<br>
-            Até 4 horas de apresentação.
-        </p>
-
-        <div class="preco">R$ 1.500</div>
-
-        <a class="botao" href="#">
-            SOLICITAR CONTRATAÇÃO
-        </a>
-    </div>
-
-    <div class="card">
-        <h2>🥁 Samba 6 Integrantes</h2>
-        <p class="info">
-            Formação completa<br>
-            Até 4 horas de apresentação.
-        </p>
-
-        <div class="preco">R$ 2.000</div>
-
-        <a class="botao" href="#">
-            SOLICITAR CONTRATAÇÃO
-        </a>
-    </div>
-
 </div>
 
+
+<div class="modal" id="modal">
+
+    <div class="modal-box">
+
+        <span class="close"
+        onclick="fechar()">×</span>
+
+        <h2 id="tituloModal">
+            Solicitar contratação
+        </h2>
+
+        <p id="artistaEscolhido"></p>
+
+        <div class="form">
+
+            <input
+                id="nome"
+                placeholder="Seu nome"
+            >
+
+            <input
+                id="data"
+                type="date"
+            >
+
+            <input
+                id="hora"
+                type="time"
+            >
+
+            <input
+                id="local"
+                placeholder="Cidade / local do evento"
+            >
+
+            <select id="evento">
+
+                <option value="">
+                    Tipo de evento
+                </option>
+
+                <option>
+                    Aniversário
+                </option>
+
+                <option>
+                    Casamento
+                </option>
+
+                <option>
+                    Evento empresarial
+                </option>
+
+                <option>
+                    Bar / Restaurante
+                </option>
+
+                <option>
+                    Festa particular
+                </option>
+
+                <option>
+                    Outro
+                </option>
+
+            </select>
+
+            <button onclick="enviar()">
+                📲 SOLICITAR ORÇAMENTO
+            </button>
+
+        </div>
+
+    </div>
+</div>
+
+
 <footer>
-    © 2026 Produções e Eventos
+    A Produções & Eventos<br>
+    Conectando eventos a músicos.
 </footer>
 
+
+<script>
+
+let artistaAtual = "";
+
+function contratar(nome){
+
+    artistaAtual = nome;
+
+    document.getElementById("artistaEscolhido").innerText =
+        "Atração escolhida: " + nome;
+
+    document.getElementById("modal").style.display =
+        "block";
+}
+
+function perfil(nome){
+
+    alert(
+        "Perfil de " + nome +
+        "\n\nAqui vamos colocar fotos, vídeos, repertório, formação e informações do artista."
+    );
+}
+
+function fechar(){
+
+    document.getElementById("modal").style.display =
+        "none";
+}
+
+function enviar(){
+
+    const nome =
+        document.getElementById("nome").value;
+
+    const data =
+        document.getElementById("data").value;
+
+    const hora =
+        document.getElementById("hora").value;
+
+    const local =
+        document.getElementById("local").value;
+
+    const evento =
+        document.getElementById("evento").value;
+
+    if(!nome || !data || !hora || !local){
+
+        alert(
+            "Preencha nome, data, horário e local."
+        );
+
+        return;
+    }
+
+    const mensagem =
+        "Olá! Quero solicitar um orçamento.%0A%0A" +
+        "Atração: " + artistaAtual +
+        "%0ANome: " + nome +
+        "%0AData: " + data +
+        "%0AHorário: " + hora +
+        "%0ALocal: " + local +
+        "%0AEvento: " + evento;
+
+    alert(
+        "Solicitação preparada! Na próxima etapa vamos conectar este botão ao WhatsApp."
+    );
+}
+
+function filtrar(){
+
+    const texto =
+        document.getElementById("search").value
+        .toLowerCase();
+
+    const cards =
+        document.querySelectorAll(".artista");
+
+    cards.forEach(card => {
+
+        const conteudo =
+            card.innerText.toLowerCase();
+
+        card.style.display =
+            conteudo.includes(texto)
+            ? "block"
+            : "none";
+    });
+}
+
+function categoria(cat){
+
+    const cards =
+        document.querySelectorAll(".artista");
+
+    cards.forEach(card => {
+
+        if(cat === "Todos"){
+
+            card.style.display = "block";
+
+        }else{
+
+            const categorias =
+                card.dataset.categoria;
+
+            card.style.display =
+                categorias.includes(cat)
+                ? "block"
+                : "none";
+        }
+    });
+}
+
+</script>
+
 </body>
-  </html>
+        </html>
