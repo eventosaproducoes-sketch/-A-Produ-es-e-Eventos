@@ -467,9 +467,10 @@ footer{
 let artistaAtual = "";
 
 function contratar(nome){
-    const mensagem = ...
-    const whatsapp = ...
-    window.open(whatsapp, "_blank");
+    artistaAtual = nome;
+document.getElementById("artistaEscolhido").innerText =
+        "Atração escolhida: " + nome;
+document.getElementById("modal").style.display = "block";
     }
 function perfil(nome){
     alert(
