@@ -500,43 +500,33 @@ function fechar(){
 
 function enviar(){
 
-    const nome =
-        document.getElementById("nome").value;
+    const nome = document.getElementById("nome").value;
+    const data = document.getElementById("data").value;
+    const hora = document.getElementById("hora").value;
+    const local = document.getElementById("local").value;
+    const evento = document.getElementById("evento").value;
 
-    const data =
-        document.getElementById("data").value;
-
-    const hora =
-        document.getElementById("hora").value;
-
-    const local =
-        document.getElementById("local").value;
-
-    const evento =
-        document.getElementById("evento").value;
-
-    if(!nome || !data || !hora || !local){
-
-        alert(
-            "Preencha nome, data, horário e local."
-        );
-
+    if(!nome || !data || !hora || !local || !evento){
+        alert("Preencha nome, data, horário, local e tipo de evento.");
         return;
     }
 
-    const mensagem =
-        "Olá! Quero solicitar um orçamento.%0A%0A" +
-        "Atração: " + artistaAtual +
-        "%0ANome: " + nome +
-        "%0AData: " + data +
-        "%0AHorário: " + hora +
-        "%0ALocal: " + local +
-        "%0AEvento: " + evento;
+    const artista = artistaAtual || "AdaSamba";
 
-    alert(
-        "Solicitação preparada! Na próxima etapa vamos conectar este botão ao WhatsApp."
-    );
-}
+    const mensagem =
+        "Olá! Gostaria de solicitar um orçamento.%0A%0A" +
+        "🎤 Artista: " + artista + "%0A" +
+        "👤 Nome: " + nome + "%0A" +
+        "📅 Data: " + data + "%0A" +
+        "⏰ Horário: " + hora + "%0A" +
+        "📍 Local: " + local + "%0A" +
+        "🎉 Evento: " + evento + "%0A%0A" +
+        "Gostaria de receber informações sobre disponibilidade e valores.";
+
+    const whatsapp = "https://wa.me/5511958225834?text=" + mensagem;
+
+    window.open(whatsapp, "_blank");
+    }
 
 function filtrar(){
 
