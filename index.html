@@ -448,7 +448,28 @@ footer{
 
             </select>
 
-            <button onclick="enviar()">
+            <label>🎤 Formação desejada</label>
+<select id="formacao">
+  <option value="">Selecione a formação</option>
+  <option>Samba Trio</option>
+  <option>Samba 4 Integrantes</option>
+  <option>Banda Completa</option>
+</select>
+
+<label>🧾 Precisa de Nota Fiscal?</label>
+<select id="notaFiscal">
+  <option value="">Selecione</option>
+  <option>Sim</option>
+  <option>Não</option>
+  <option>Não sei</option>
+</select>
+
+<label>👕 Cor da camisa</label>
+<select id="camisa">
+  <option value="">Selecione</option>
+  <option>Preta</option>
+  <option>Branca</option>
+</select>
                 📲 SOLICITAR ORÇAMENTO
             </button>
 
@@ -501,35 +522,6 @@ function fechar(){
         "none";
 }
 
-function enviar(){
-
-    const nome = document.getElementById("nome").value;
-    const data = document.getElementById("data").value;
-    const hora = document.getElementById("hora").value;
-    const local = document.getElementById("local").value;
-    const evento = document.getElementById("evento").value;
-
-    if(!nome || !data || !hora || !local || !evento){
-        alert("Preencha nome, data, horário, local e tipo de evento.");
-        return;
-    }
-
-    const artista = artistaAtual || "AdaSamba";
-
-    const mensagem =
-        "Olá! Gostaria de solicitar um orçamento.%0A%0A" +
-        "🎤 Artista: " + artista + "%0A" +
-        "👤 Nome: " + nome + "%0A" +
-        "📅 Data: " + data + "%0A" +
-        "⏰ Horário: " + hora + "%0A" +
-        "📍 Local: " + local + "%0A" +
-        "🎉 Evento: " + evento + "%0A%0A" +
-        "Gostaria de receber informações sobre disponibilidade e valores.";
-
-    const whatsapp = "https://wa.me/5511958225834?text=" + mensagem;
-
-    window.open(whatsapp, "_blank");
-    }
 
 function filtrar(){
 
@@ -551,7 +543,41 @@ function filtrar(){
             : "none";
     });
 }
+function enviar(){
 
+const nome = document.getElementById("nome").value;
+const data = document.getElementById("data").value;
+const hora = document.getElementById("hora").value;
+const local = document.getElementById("local").value;
+const evento = document.getElementById("evento").value;
+const formacao = document.getElementById("formacao").value;
+const notaFiscal = document.getElementById("notaFiscal").value;
+const camisa = document.getElementById("camisa").value;
+
+if(!nome || !data || !hora || !local || !evento || !formacao || !notaFiscal || !camisa){
+alert("Preencha todos os campos do orçamento.");
+return;
+}
+
+const artista = artistaAtual || "AdaSamba";
+
+const mensagem =
+"Olá! Gostaria de solicitar um orçamento.%0A%0A" +
+"🎤 Artista: " + artista + "%0A" +
+"👤 Nome: " + nome + "%0A" +
+"📅 Data: " + data + "%0A" +
+"⏰ Horário: " + hora + "%0A" +
+"📍 Local: " + local + "%0A" +
+"🎉 Evento: " + evento + "%0A" +
+"🎶 Formação: " + formacao + "%0A" +
+"🧾 Nota fiscal: " + notaFiscal + "%0A" +
+"👕 Cor da camisa: " + camisa;
+
+const whatsapp = "https://wa.me/5511958225834?text=" + mensagem;
+
+window.open(whatsapp, "_blank");
+
+}
 function categoria(cat){
 
     const cards =
@@ -563,7 +589,6 @@ function categoria(cat){
 
             card.style.display = "block";
 
-        }else{
 
             const categorias =
                 card.dataset.categoria;
