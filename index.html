@@ -20,22 +20,26 @@ body{
     color:#111;
 }
 
+/* CABEÇALHO */
+
 header{
     background:#111;
-    color:white;
+    color:#fff;
     text-align:center;
     padding:35px 20px;
 }
 
 header h1{
-    font-size:34px;
-    margin-bottom:10px;
+    font-size:32px;
+    margin-bottom:8px;
 }
 
 header p{
-    font-size:17px;
     color:#ddd;
+    font-size:16px;
 }
+
+/* CONTEÚDO */
 
 .container{
     max-width:900px;
@@ -43,15 +47,19 @@ header p{
     padding:25px 18px;
 }
 
+/* BUSCA */
+
 .search{
     width:100%;
-    padding:16px;
+    padding:15px;
     border:0;
     border-radius:12px;
     font-size:16px;
     margin-bottom:18px;
-    box-shadow:0 2px 10px #ccc;
+    box-shadow:0 2px 10px rgba(0,0,0,.12);
 }
+
+/* CATEGORIAS */
 
 .categories{
     display:flex;
@@ -63,39 +71,44 @@ header p{
 
 .categories button{
     border:0;
-    padding:12px 18px;
+    padding:11px 17px;
     border-radius:25px;
     white-space:nowrap;
+    background:#ddd;
     font-weight:bold;
     cursor:pointer;
-    background:#ddd;
 }
 
 .categories button:hover{
     background:#111;
-    color:white;
+    color:#fff;
 }
+
+/* TÍTULO */
 
 .section-title{
-    margin:20px 0;
     font-size:24px;
+    margin-bottom:20px;
 }
 
+/* CARD */
+
 .card{
-    background:white;
-    border-radius:18px;
+    background:#fff;
+    border-radius:20px;
     overflow:hidden;
     margin-bottom:20px;
     box-shadow:0 4px 18px rgba(0,0,0,.12);
 }
 
 .photo{
-    height:180px;
-    background:#222;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    font-size:70px;
+    width:100%;
+    height:240px;
+    background-image:url("./file_00000000ed2471f5b3c43399573a3899.png");
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+    background-color:#ddd;
 }
 
 .content{
@@ -105,26 +118,24 @@ header p{
 .tag{
     display:inline-block;
     background:#eee;
-    padding:6px 10px;
+    padding:6px 11px;
     border-radius:20px;
     font-size:14px;
     margin-bottom:10px;
 }
 
 .content h2{
+    font-size:26px;
     margin-bottom:8px;
 }
 
 .description{
-    line-height:1.5;
     color:#555;
+    line-height:1.5;
+    margin-bottom:18px;
 }
 
-.price{
-    font-size:23px;
-    font-weight:bold;
-    margin:15px 0;
-}
+/* BOTÕES */
 
 .buttons{
     display:flex;
@@ -137,8 +148,8 @@ header p{
     padding:14px;
     border-radius:11px;
     font-weight:bold;
-    text-align:center;
     cursor:pointer;
+    font-size:14px;
 }
 
 .btn-profile{
@@ -148,11 +159,11 @@ header p{
 
 .btn-contract{
     background:#111;
-    color:white;
+    color:#fff;
 }
 
 .btn:hover{
-    opacity:.8;
+    opacity:.85;
 }
 
 /* MODAL */
@@ -161,74 +172,87 @@ header p{
     display:none;
     position:fixed;
     inset:0;
-    background:rgba(0,0,0,.7);
-    padding:15px;
-    z-index:100;
+    background:rgba(0,0,0,.72);
+    z-index:1000;
+    padding:12px;
     overflow-y:auto;
 }
 
 .modal-box{
-    background:white;
+    width:100%;
     max-width:520px;
-    margin:30px auto;
+    background:#fff;
+    margin:10px auto;
     border-radius:20px;
-    padding:25px;
+    padding:22px;
+    position:relative;
 }
+
+/* BOTÃO FECHAR */
 
 .close{
-    float:right;
-    font-size:28px;
-    cursor:pointer;
-}
-
-.modal h2{
-    margin-bottom:10px;
-}
-
-#artistaEscolhido{
-    background:#eee;
-    padding:10px;
-    border-radius:10px;
-    margin:15px 0;
+    position:absolute;
+    right:16px;
+    top:10px;
+    font-size:30px;
     font-weight:bold;
+    cursor:pointer;
+    color:#555;
+}
+
+/* FORMULÁRIO */
+
+.form{
+    margin-top:18px;
 }
 
 .form label{
     display:block;
     font-weight:bold;
-    margin-top:12px;
-    margin-bottom:5px;
+    margin-top:14px;
+    margin-bottom:6px;
 }
 
 .form input,
 .form select{
     width:100%;
-    padding:14px;
-    border:1px solid #ddd;
+    padding:13px;
+    border:1px solid #ccc;
     border-radius:10px;
     font-size:15px;
+    background:#fff;
 }
 
 .form button{
     width:100%;
-    padding:15px;
+    padding:16px;
     border:0;
-    border-radius:10px;
+    border-radius:11px;
     background:#111;
-    color:white;
+    color:#fff;
+    font-size:16px;
     font-weight:bold;
-    margin-top:15px;
+    margin-top:20px;
     cursor:pointer;
 }
 
-.profile-box{
-    line-height:1.6;
+.form button:hover{
+    background:#333;
 }
 
-.profile-box h3{
+/* PERFIL */
+
+.profile-text{
+    line-height:1.6;
+    color:#444;
     margin-top:15px;
-    margin-bottom:5px;
 }
+
+.profile-text strong{
+    color:#111;
+}
+
+/* RODAPÉ */
 
 footer{
     background:#111;
@@ -238,18 +262,32 @@ footer{
     margin-top:30px;
 }
 
+footer strong{
+    color:#fff;
+}
+
+/* CELULAR */
+
 @media(max-width:600px){
 
     header h1{
-        font-size:28px;
+        font-size:27px;
+    }
+
+    .photo{
+        height:220px;
     }
 
     .buttons{
         flex-direction:column;
     }
 
+    .modal{
+        padding:8px;
+    }
+
     .modal-box{
-        margin:15px auto;
+        margin:5px auto;
         padding:20px;
     }
 
@@ -258,6 +296,7 @@ footer{
 </style>
 </head>
 
+
 <body>
 
 <header>
@@ -265,20 +304,20 @@ footer{
     <h1>🎶 AdaSamba & Eventos</h1>
 
     <p>
-        Conectando eventos a músicos.
+        Música ao vivo para o seu evento
     </p>
 
 </header>
 
 
-<div class="container">
+<main class="container">
 
     <input
         class="search"
         id="search"
         type="text"
-        placeholder="🔎 Procurar músico ou atração..."
-        onkeyup="filtrar()"
+        placeholder="🔎 Procurar artista..."
+        oninput="filtrar()"
     >
 
 
@@ -308,23 +347,20 @@ footer{
 
 
     <h2 class="section-title">
-        🎤 Artistas disponíveis
+        🎤 Artistas
     </h2>
 
 
     <div id="catalogo">
 
-
         <!-- ADASAMBA -->
 
         <div
             class="card artista"
-            data-categoria="Samba,Pagode,MPB"
+            data-categoria="Samba,Pagode,MPB,Banda"
         >
 
-            <div class="photo">
-                🎤
-            </div>
+            <div class="photo"></div>
 
             <div class="content">
 
@@ -337,27 +373,26 @@ footer{
                 </h2>
 
                 <p class="description">
-                    Samba ao vivo para festas, bares,
-                    aniversários, eventos, confraternizações
-                    e celebrações.
+                    Samba, pagode e MPB ao vivo para
+                    aniversários, festas, eventos,
+                    confraternizações, bares,
+                    restaurantes e celebrações.
                 </p>
-
-                <div class="price">
-                    A partir de R$ 800
-                </div>
 
                 <div class="buttons">
 
                     <button
                         class="btn btn-profile"
-                        onclick="perfil('AdaSamba')"
+                        type="button"
+                        onclick="perfil()"
                     >
                         VER PERFIL
                     </button>
 
                     <button
                         class="btn btn-contract"
-                        onclick="contratar('AdaSamba')"
+                        type="button"
+                        onclick="contratar()"
                     >
                         CONTRATAR
                     </button>
@@ -367,179 +402,13 @@ footer{
             </div>
 
         </div>
-
-
-        <!-- SAMBA TRIO -->
-
-        <div
-            class="card artista"
-            data-categoria="Samba,Pagode"
-        >
-
-            <div class="photo">
-                🥁
-            </div>
-
-            <div class="content">
-
-                <span class="tag">
-                    Samba • Pagode
-                </span>
-
-                <h2>
-                    Samba Trio
-                </h2>
-
-                <p class="description">
-                    Formação com 3 músicos para eventos
-                    menores, bares, restaurantes,
-                    aniversários e confraternizações.
-                    Apresentação de até 4 horas.
-                </p>
-
-                <div class="price">
-                    R$ 800
-                </div>
-
-                <div class="buttons">
-
-                    <button
-                        class="btn btn-profile"
-                        onclick="perfil('Samba Trio')"
-                    >
-                        VER PERFIL
-                    </button>
-
-                    <button
-                        class="btn btn-contract"
-                        onclick="contratar('Samba Trio')"
-                    >
-                        CONTRATAR
-                    </button>
-
-                </div>
-
-            </div>
-
-        </div>
-
-
-        <!-- SAMBA 4 -->
-
-        <div
-            class="card artista"
-            data-categoria="Samba,Pagode"
-        >
-
-            <div class="photo">
-                🎶
-            </div>
-
-            <div class="content">
-
-                <span class="tag">
-                    Samba • Pagode
-                </span>
-
-                <h2>
-                    Samba 4 Integrantes
-                </h2>
-
-                <p class="description">
-                    Formação com 4 músicos para eventos
-                    que precisam de uma apresentação
-                    mais completa e marcante.
-                </p>
-
-                <div class="price">
-                    R$ 1.500
-                </div>
-
-                <div class="buttons">
-
-                    <button
-                        class="btn btn-profile"
-                        onclick="perfil('Samba 4 Integrantes')"
-                    >
-                        VER PERFIL
-                    </button>
-
-                    <button
-                        class="btn btn-contract"
-                        onclick="contratar('Samba 4 Integrantes')"
-                    >
-                        CONTRATAR
-                    </button>
-
-                </div>
-
-            </div>
-
-        </div>
-
-
-        <!-- SAMBA 6 -->
-
-        <div
-            class="card artista"
-            data-categoria="Samba,Pagode,Banda"
-        >
-
-            <div class="photo">
-                🎼
-            </div>
-
-            <div class="content">
-
-                <span class="tag">
-                    Samba • Pagode • Banda
-                </span>
-
-                <h2>
-                    Samba 6 Integrantes
-                </h2>
-
-                <p class="description">
-                    Formação completa para festas,
-                    eventos corporativos, grandes
-                    confraternizações e celebrações
-                    que precisam de uma apresentação
-                    de maior impacto.
-                </p>
-
-                <div class="price">
-                    R$ 2.000
-                </div>
-
-                <div class="buttons">
-
-                    <button
-                        class="btn btn-profile"
-                        onclick="perfil('Samba 6 Integrantes')"
-                    >
-                        VER PERFIL
-                    </button>
-
-                    <button
-                        class="btn btn-contract"
-                        onclick="contratar('Samba 6 Integrantes')"
-                    >
-                        CONTRATAR
-                    </button>
-
-                </div>
-
-            </div>
-
-        </div>
-
 
     </div>
 
-</div>
+</main>
 
 
-<!-- MODAL -->
+<!-- MODAL DE CONTRATAÇÃO -->
 
 <div
     class="modal"
@@ -555,27 +424,40 @@ footer{
             ×
         </span>
 
-        <h2 id="tituloModal">
-            Solicitar contratação
+        <h2>
+            Solicitar orçamento
         </h2>
 
-        <p id="artistaEscolhido"></p>
+        <p style="margin-top:8px;color:#555;">
+            Preencha os dados do evento.
+        </p>
 
 
         <div class="form">
 
-            <label>
-                Seu nome
+            <label for="nome">
+                Nome
             </label>
 
             <input
                 id="nome"
                 type="text"
-                placeholder="Digite seu nome"
+                placeholder="Seu nome"
             >
 
 
-            <label>
+            <label for="telefone">
+                WhatsApp
+            </label>
+
+            <input
+                id="telefone"
+                type="tel"
+                placeholder="Seu WhatsApp"
+            >
+
+
+            <label for="data">
                 Data do evento
             </label>
 
@@ -585,7 +467,7 @@ footer{
             >
 
 
-            <label>
+            <label for="hora">
                 Horário
             </label>
 
@@ -595,18 +477,18 @@ footer{
             >
 
 
-            <label>
+            <label for="local">
                 Cidade / Local
             </label>
 
             <input
                 id="local"
                 type="text"
-                placeholder="Cidade e local do evento"
+                placeholder="Onde será o evento?"
             >
 
 
-            <label>
+            <label for="evento">
                 Tipo de evento
             </label>
 
@@ -629,19 +511,19 @@ footer{
                 </option>
 
                 <option>
-                    Bar / Restaurante
-                </option>
-
-                <option>
                     Festa particular
                 </option>
 
                 <option>
-                    Evento cultural
+                    Bar / Restaurante
                 </option>
 
                 <option>
                     Confraternização
+                </option>
+
+                <option>
+                    Evento cultural
                 </option>
 
                 <option>
@@ -651,14 +533,14 @@ footer{
             </select>
 
 
-            <label>
-                Formação desejada
+            <label for="formacao">
+                🎤 Formação desejada
             </label>
 
             <select id="formacao">
 
                 <option value="">
-                    Selecione
+                    Selecione a formação
                 </option>
 
                 <option>
@@ -670,18 +552,14 @@ footer{
                 </option>
 
                 <option>
-                    Samba 6 Integrantes
-                </option>
-
-                <option>
-                    AdaSamba
+                    Banda Completa
                 </option>
 
             </select>
 
 
-            <label>
-                Precisa de nota fiscal?
+            <label for="notaFiscal">
+                🧾 Precisa de Nota Fiscal?
             </label>
 
             <select id="notaFiscal">
@@ -698,11 +576,15 @@ footer{
                     Não
                 </option>
 
+                <option>
+                    Não sei
+                </option>
+
             </select>
 
 
-            <label>
-                Cor da camisa
+            <label for="camisa">
+                👕 Cor da camisa
             </label>
 
             <select id="camisa">
@@ -736,19 +618,78 @@ footer{
 </div>
 
 
+<!-- MODAL PERFIL -->
+
+<div
+    class="modal"
+    id="modalPerfil"
+>
+
+    <div class="modal-box">
+
+        <span
+            class="close"
+            onclick="fecharPerfil()"
+        >
+            ×
+        </span>
+
+        <h2>
+            🎤 AdaSamba
+        </h2>
+
+        <div class="profile-text">
+
+            <p>
+                <strong>Samba • Pagode • MPB</strong>
+            </p>
+
+            <br>
+
+            <p>
+                AdaSamba apresenta música ao vivo
+                para eventos, festas, aniversários,
+                confraternizações, bares,
+                restaurantes e eventos culturais.
+            </p>
+
+            <br>
+
+            <p>
+                <strong>Formações disponíveis:</strong>
+            </p>
+
+            <p>
+                • Samba Trio<br>
+                • Samba 4 Integrantes<br>
+                • Banda Completa
+            </p>
+
+            <br>
+
+            <p>
+                Entre em contato para verificar
+                disponibilidade e receber seu orçamento.
+            </p>
+
+        </div>
+
+    </div>
+
+</div>
+
+
 <footer>
 
     <p>
         <strong>AdaSamba & Eventos</strong>
     </p>
 
-    <p>
-        Conectando eventos a músicos.
+    <p style="margin-top:8px;">
+        Música ao vivo para seu evento.
     </p>
 
-    <br>
-
-    <p>
+    <p style="margin-top:15px;">
         © 2026 AdaSamba
     </p>
 
@@ -757,19 +698,9 @@ footer{
 
 <script>
 
-let artistaAtual = "";
+/* ABRIR CONTRATAÇÃO */
 
-
-/* CONTRATAR */
-
-function contratar(nome){
-
-    artistaAtual = nome;
-
-    document.getElementById(
-        "artistaEscolhido"
-    ).innerText =
-        "🎤 Atração escolhida: " + nome;
+function contratar(){
 
     document.getElementById(
         "modal"
@@ -778,7 +709,7 @@ function contratar(nome){
 }
 
 
-/* FECHAR */
+/* FECHAR CONTRATAÇÃO */
 
 function fechar(){
 
@@ -789,59 +720,37 @@ function fechar(){
 }
 
 
-/* PERFIL */
+/* ABRIR PERFIL */
 
-function perfil(nome){
+function perfil(){
 
-    let texto = "";
-
-    if(nome === "AdaSamba"){
-
-        texto =
-        "🎤 PERFIL DE ADASAMBA\n\n" +
-
-        "🎶 Samba • Pagode • MPB\n\n" +
-
-        "AdaSamba apresenta um repertório " +
-        "de samba, pagode e MPB para festas, " +
-        "bares, aniversários, eventos e " +
-        "confraternizações.\n\n" +
-
-        "👥 FORMAÇÕES\n" +
-        "• Samba Trio\n" +
-        "• Samba 4 Integrantes\n" +
-        "• Samba 6 Integrantes\n\n" +
-
-        "⏱️ Apresentação de até 4 horas.\n\n" +
-
-        "💰 Valores a partir de R$ 800.";
-
-    }else{
-
-        texto =
-        "🎤 PERFIL\n\n" +
-
-        nome + "\n\n" +
-
-        "🎶 Música ao vivo para eventos, " +
-        "festas, bares, aniversários e " +
-        "confraternizações.\n\n" +
-
-        "📞 Para contratar, clique em CONTRATAR.";
-
-    }
-
-    alert(texto);
+    document.getElementById(
+        "modalPerfil"
+    ).style.display = "block";
 
 }
 
 
-/* ENVIAR ORÇAMENTO */
+/* FECHAR PERFIL */
+
+function fecharPerfil(){
+
+    document.getElementById(
+        "modalPerfil"
+    ).style.display = "none";
+
+}
+
+
+/* ENVIAR PARA WHATSAPP */
 
 function enviar(){
 
     const nome =
-        document.getElementById("nome").value;
+        document.getElementById("nome").value.trim();
+
+    const telefone =
+        document.getElementById("telefone").value.trim();
 
     const data =
         document.getElementById("data").value;
@@ -850,7 +759,7 @@ function enviar(){
         document.getElementById("hora").value;
 
     const local =
-        document.getElementById("local").value;
+        document.getElementById("local").value.trim();
 
     const evento =
         document.getElementById("evento").value;
@@ -867,6 +776,7 @@ function enviar(){
 
     if(
         !nome ||
+        !telefone ||
         !data ||
         !hora ||
         !local ||
@@ -877,7 +787,7 @@ function enviar(){
     ){
 
         alert(
-            "Preencha todos os campos do orçamento."
+            "Por favor, preencha todos os campos."
         );
 
         return;
@@ -885,72 +795,78 @@ function enviar(){
     }
 
 
-    const artista =
-        artistaAtual || "AdaSamba";
-
-
     const mensagem =
 
         "Olá! Gostaria de solicitar um orçamento.%0A%0A" +
 
-        "🎤 Artista: " +
-        artista +
-        "%0A" +
+        "🎤 Artista: AdaSamba%0A" +
 
         "👤 Nome: " +
-        nome +
+        encodeURIComponent(nome) +
+        "%0A" +
+
+        "📱 WhatsApp: " +
+        encodeURIComponent(telefone) +
         "%0A" +
 
         "📅 Data: " +
-        data +
+        encodeURIComponent(data) +
         "%0A" +
 
         "⏰ Horário: " +
-        hora +
+        encodeURIComponent(hora) +
         "%0A" +
 
         "📍 Local: " +
-        local +
+        encodeURIComponent(local) +
         "%0A" +
 
         "🎉 Evento: " +
-        evento +
+        encodeURIComponent(evento) +
         "%0A" +
 
-        "🎶 Formação: " +
-        formacao +
+        "🎤 Formação: " +
+        encodeURIComponent(formacao) +
         "%0A" +
 
-        "📄 Nota fiscal: " +
-        notaFiscal +
+        "🧾 Nota Fiscal: " +
+        encodeURIComponent(notaFiscal) +
         "%0A" +
 
         "👕 Cor da camisa: " +
-        camisa;
+        encodeURIComponent(camisa) +
+        "%0A%0A" +
+
+        "Gostaria de receber informações " +
+        "sobre disponibilidade e orçamento.";
 
 
-    const whatsapp =
-        "https://wa.me/5511958225834?text=" +
+    const numero =
+        "5511958225834";
+
+
+    const url =
+        "https://wa.me/" +
+        numero +
+        "?text=" +
         mensagem;
 
 
-    window.open(
-        whatsapp,
-        "_blank"
-    );
+    window.location.href = url;
 
 }
 
 
-/* FILTRO DE PESQUISA */
+/* PESQUISA */
 
 function filtrar(){
 
-    const texto =
+    const busca =
         document
         .getElementById("search")
         .value
-        .toLowerCase();
+        .toLowerCase()
+        .trim();
 
 
     const cards =
@@ -959,14 +875,14 @@ function filtrar(){
         );
 
 
-    cards.forEach(card => {
+    cards.forEach(function(card){
 
-        const conteudo =
+        const texto =
             card.innerText.toLowerCase();
 
 
         if(
-            conteudo.includes(texto)
+            texto.includes(busca)
         ){
 
             card.style.display =
@@ -984,7 +900,7 @@ function filtrar(){
 }
 
 
-/* FILTRO POR CATEGORIA */
+/* CATEGORIAS */
 
 function categoria(cat){
 
@@ -994,7 +910,7 @@ function categoria(cat){
         );
 
 
-    cards.forEach(card => {
+    cards.forEach(function(card){
 
         if(cat === "Todos"){
 
@@ -1029,21 +945,34 @@ function categoria(cat){
 }
 
 
-/* FECHAR CLICANDO FORA */
+/* FECHAR MODAIS AO CLICAR FORA */
 
-window.onclick = function(event){
+window.addEventListener(
+    "click",
+    function(event){
 
-    const modal =
-        document.getElementById("modal");
+        const modal =
+            document.getElementById("modal");
+
+        const modalPerfil =
+            document.getElementById("modalPerfil");
 
 
-    if(event.target === modal){
+        if(event.target === modal){
 
-        fechar();
+            fechar();
+
+        }
+
+
+        if(event.target === modalPerfil){
+
+            fecharPerfil();
+
+        }
 
     }
-
-};
+);
 
 </script>
 
