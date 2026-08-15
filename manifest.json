@@ -1,0 +1,10 @@
+{
+  "name": "Andando Música",
+  "short_name": "Andando",
+  "description": "Loja de instrumentos musicais",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#0757b8",
+  "theme_color": "#0757b8",
+  "orientation": "portrait"
+}
