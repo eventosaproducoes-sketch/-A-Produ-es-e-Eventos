@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Andando | Instrumentos Musicais</title>
+
+<style>
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+body{
+    font-family:Arial, sans-serif;
+    background:#f2f7ff;
+    color:#172033;
+}
+
+/* CABEÇALHO */
+header{
+    background:#0757b8;
+    color:white;
+    padding:18px;
+    position:sticky;
+    top:0;
+    z-index:10;
+    box-shadow:0 3px 12px rgba(0,0,0,.15);
+}
+
+.header{
+    max-width:1100px;
+    margin:auto;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:15px;
+}
+
+.logo{
+    font-size:28px;
+    font-weight:bold;
+}
+
+.logo span{
+    color:#8fc7ff;
+}
+
+nav{
+    display:flex;
+    gap:20px;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+/* BANNER */
+.hero{
+    background:linear-gradient(135deg,#063d83,#0879ed);
+    color:white;
+    padding:70px 20px;
+}
+
+.hero-content{
+    max-width:1100px;
+    margin:auto;
+}
+
+.hero h1{
+    font-size:48px;
+    margin-bottom:15px;
+}
+
+.hero p{
+    font-size:19px;
+    max-width:600px;
+    margin-bottom:25px;
+}
+
+.btn{
+    display:inline-block;
+    padding:13px 20px;
+    border-radius:9px;
+    border:none;
+    font-weight:bold;
+    cursor:pointer;
+    text-decoration:none;
+}
+
+.btn-white{
+    background:white;
+    color:#0757b8;
+}
+
+/* CONTAINER */
+.container{
+    max-width:1100px;
+    margin:auto;
+    padding:35px 18px;
+}
+
+.title{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:25px;
+}
+
+.title h2{
+    color:#0757b8;
+}
+
+/* FILTROS */
+.filters{
+    background:white;
+    padding:18px;
+    border-radius:14px;
+    box-shadow:0 4px 15px rgba(0,0,0,.08);
+    margin-bottom:30px;
+}
+
+.filters input,
+.filters select{
+    padding:13px;
+    border:1px solid #ccd8e8;
+    border-radius:8px;
+    width:100%;
+}
+
+.filter-grid{
+    display:grid;
+    grid-template-columns:2fr 1fr;
+    gap:10px;
+}
+
+/* PRODUTOS */
+.products{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+}
+
+.card{
+    background:white;
+    border-radius:15px;
+    overflow:hidden;
+    box-shadow:0 5px 18px rgba(0,0,0,.09);
+    border:1px solid #e0e8f3;
+}
+
+.photo{
+    height:210px;
+    background:#dcecff;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:90px;
+}
+
+.info{
+    padding:18px;
+}
+
+.category{
+    color:#6480a0;
+    font-size:12px;
+    font-weight:bold;
+    text-transform:uppercase;
+}
+
+.name{
+    font-size:21px;
+    font-weight:bold;
+    margin:7px 0;
+}
+
+.description{
+    color:#667085;
+    font-size:14px;
+    line-height:1.5;
+}
+
+.price{
+    font-size:25px;
+    font-weight:bold;
+    color:#0757b8;
+    margin:15px 0;
+}
+
+.actions{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:8px;
+}
+
+.buy{
+    background:#0757b8;
+    color:white;
+    width:100%;
+}
+
+.details{
+    background:#e7f1ff;
+    color:#0757b8;
+    width:100%;
+}
+
+/* RODAPÉ */
+footer{
+    background:#062f63;
+    color:white;
+    padding:35px 20px;
+    margin-top:30px;
+}
+
+.footer-content{
+    max-width:1100px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:2fr 1fr 1fr;
+    gap:30px;
+}
+
+footer h3{
+    margin-bottom:10px;
+}
+
+footer p{
+    color:#c8dcf5;
+    line-height:1.6;
+}
+
+/* MODAL */
+.modal{
+    display:none;
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.7);
+    z-index:30;
+    align-items:center;
+    justify-content:center;
+    padding:20px;
+}
+
+.modal-box{
+    background:white;
+    max-width:500px;
+    width:100%;
+    border-radius:15px;
+    padding:25px;
+}
+
+.close{
+    float:right;
+    border:none;
+    background:none;
+    font-size:25px;
+    cursor:pointer;
+}
+
+.modal-box h2{
+    color:#0757b8;
+    margin-bottom:15px;
+}
+
+/* CELULAR */
+@media(max-width:800px){
+
+    .header{
+        flex-direction:column;
+    }
+
+    nav{
+        display:none;
+    }
+
+    .hero h1{
+        font-size:36px;
+    }
+
+    .products{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .footer-content{
+        grid-template-columns:1fr;
+    }
+}
+
+@media(max-width:520px){
+
+    .products{
+        grid-template-columns:1fr;
+    }
+
+    .filter-grid{
+        grid-template-columns:1fr;
+    }
+
+    .hero h1{
+        font-size:32px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+
+<div class="header">
+
+<div class="logo">
+Andando<span> Música</span>
+</div>
+
+<nav>
+<a href="#inicio">Início</a>
+<a href="#produtos">Instrumentos</a>
+<a href="#contato">Contato</a>
+</nav>
+
+</div>
+
+</header>
+
+
+<section class="hero" id="inicio">
+
+<div class="hero-content">
+
+<h1>Instrumentos para quem vive de música.</h1>
+
+<p>
+Encontre instrumentos musicais, acessórios e equipamentos
+para seus ensaios, apresentações e estudos.
+</p>
+
+<a href="#produtos" class="btn btn-white">
+VER INSTRUMENTOS
+</a>
+
+</div>
+
+</section>
+
+
+<main class="container">
+
+<div class="filters">
+
+<div class="filter-grid">
+
+<input
+type="text"
+id="search"
+placeholder="🔎 Procurar instrumento..."
+oninput="filtrar()"
+>
+
+<select id="categoria" onchange="filtrar()">
+
+<option value="">Todas as categorias</option>
+<option value="violao">Violões</option>
+<option value="percussao">Percussão</option>
+<option value="teclado">Teclados</option>
+<option value="bateria">Baterias</option>
+<option value="cordas">Cordas</option>
+
+</select>
+
+</div>
+
+</div>
+
+
+<div class="title" id="produtos">
+
+<h2>Instrumentos em destaque</h2>
+
+<span id="contador"></span>
+
+</div>
+
+
+<div class="products" id="listaProdutos"></div>
+
+</main>
+
+
+<footer id="contato">
+
+<div class="footer-content">
+
+<div>
+<h3>Andando Música</h3>
+
+<p>
+Instrumentos musicais e equipamentos
+para músicos de todos os níveis.
+</p>
+</div>
+
+<div>
+
+<h3>Atendimento</h3>
+
+<p>
+Segunda a sexta<br>
+09h às 18h<br>
+Sábado 09h às 14h
+</p>
+
+</div>
+
+<div>
+
+<h3>Contato</h3>
+
+<p>
+WhatsApp: (11) 99999-9999<br>
+São Paulo - SP
+</p>
+
+</div>
+
+</div>
+
+</footer>
+
+
+<!-- MODAL -->
+
+<div class="modal" id="modal">
+
+<div class="modal-box">
+
+<button class="close" onclick="fechar()">×</button>
+
+<div id="detalhes"></div>
+
+</div>
+
+</div>
+
+
+<script>
+
+const produtos = [
+
+{
+categoria:"violao",
+emoji:"🎸",
+nome:"Violão Acústico",
+descricao:"Violão acústico para estudos, apresentações e uso profissional.",
+preco:899
+},
+
+{
+categoria:"percussao",
+emoji:"🥁",
+nome:"Cajón Profissional",
+descricao:"Cajón para samba, MPB, acústicos e apresentações ao vivo.",
+preco:649
+},
+
+{
+categoria:"teclado",
+emoji:"🎹",
+nome:"Teclado 61 Teclas",
+descricao:"Teclado versátil para estudos, bandas e apresentações.",
+preco:1899
+},
+
+{
+categoria:"bateria",
+emoji:"🥁",
+nome:"Bateria Acústica",
+descricao:"Bateria completa para ensaios e apresentações.",
+preco:3299
+},
+
+{
+categoria:"cordas",
+emoji:"🎻",
+nome:"Violino 4/4",
+descricao:"Violino para estudantes e músicos.",
+preco:799
+},
+
+{
+categoria:"percussao",
+emoji:"🪘",
+nome:"Pandeiro Profissional",
+descricao:"Pandeiro ideal para samba, pagode e música brasileira.",
+preco:449
+}
+
+];
+
+
+function dinheiro(valor){
+
+return valor.toLocaleString(
+"pt-BR",
+{
+style:"currency",
+currency:"BRL"
+}
+);
+
+}
+
+
+function filtrar(){
+
+let lista=[...produtos];
+
+let busca=document
+.getElementById("search")
+.value
+.toLowerCase();
+
+let categoria=document
+.getElementById("categoria")
+.value;
+
+
+if(busca){
+
+lista=lista.filter(produto =>
+
+produto.nome
+.toLowerCase()
+.includes(busca)
+
+);
+
+}
+
+
+if(categoria){
+
+lista=lista.filter(produto =>
+
+produto.categoria===categoria
+
+);
+
+}
+
+
+document.getElementById("contador")
+.textContent=
+lista.length+" produto(s)";
+
+
+const area=
+document.getElementById("listaProdutos");
+
+
+if(lista.length===0){
+
+area.innerHTML=
+"<p>Nenhum instrumento encontrado.</p>";
+
+return;
+
+}
+
+
+area.innerHTML=lista.map((produto,index)=>`
+
+<div class="card">
+
+<div class="photo">
+
+${produto.emoji}
+
+</div>
+
+<div class="info">
+
+<div class="category">
+
+${produto.categoria}
+
+</div>
+
+<div class="name">
+
+${produto.nome}
+
+</div>
+
+<div class="description">
+
+${produto.descricao}
+
+</div>
+
+<div class="price">
+
+${dinheiro(produto.preco)}
+
+</div>
+
+<div class="actions">
+
+<button
+class="btn details"
+onclick="detalhesProduto(${index})">
+
+VER DETALHES
+
+</button>
+
+<button
+class="btn buy"
+onclick="comprar('${produto.nome}',${produto.preco})">
+
+COMPRAR PELO WHATSAPP
+
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+`).join("");
+
+}
+
+
+function detalhesProduto(index){
+
+const produto=produtos[index];
+
+document.getElementById("detalhes").innerHTML=`
+
+<h2>${produto.nome}</h2>
+
+<p>
+
+${produto.descricao}
+
+</p>
+
+<br>
+
+<p>
+
+<strong>Categoria:</strong>
+${produto.categoria}
+
+</p>
+
+<br>
+
+<h2>
+
+${dinheiro(produto.preco)}
+
+</h2>
+
+<br>
+
+<button
+class="btn buy"
+style="width:100%"
+onclick="comprar('${produto.nome}',${produto.preco})">
+
+COMPRAR PELO WHATSAPP
+
+</button>
+
+`;
+
+document.getElementById("modal")
+.style.display="flex";
+
+}
+
+
+function fechar(){
+
+document.getElementById("modal")
+.style.display="none";
+
+}
+
+
+function comprar(nome,preco){
+
+const numero="5511999999999";
+
+const mensagem=
+
+"Olá! Tenho interesse em comprar o instrumento: "
++nome+
+". Vi no site da Andando Música. Valor anunciado: "
++dinheiro(preco)+
+". Gostaria de mais informações.";
+
+window.open(
+
+"https://wa.me/"
++numero+
+"?text="+
+encodeURIComponent(mensagem),
+
+"_blank"
+
+);
+
+}
+
+
+filtrar();
+
+</script>
+
+</body>
+</html>
