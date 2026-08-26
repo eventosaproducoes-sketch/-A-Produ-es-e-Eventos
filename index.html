@@ -1129,69 +1129,56 @@ ${observacoes || "Nenhuma"}`;
             <br><br>
 
             <strong>
-                📈 RESULTADO:
-            </strong>
+<script>
 
-            <strong>
-                ${dinheiro(resultado)}
-            </strong>
-        `;
+document.addEventListener("DOMContentLoaded", function(){
+document.addEventListener("DOMContentLoaded", function () {
 
-    });
+    var perfil = document.getElementById("perfilModal");
+    var cliente = document.getElementById("clienteModal");
+    var interno = document.getElementById("internoModal");
 
+    document.getElementById("perfilBtn").onclick = function () {
+        perfil.style.display = "block";
+    };
 
-    /* PROPOSTA */
+    document.getElementById("contratarBtn").onclick = function () {
+        cliente.style.display = "block";
+    };
 
-    document
-    .getElementById("whatsappBtn")
-    .addEventListener("click", function(){
+    document.getElementById("internoBtn").onclick = function () {
+        interno.style.display = "block";
+    };
 
-        const nome =
-            document.getElementById("nome").value;
+    document.getElementById("fecharPerfil").onclick = function () {
+        perfil.style.display = "none";
+    };
 
-        const data =
-            document.getElementById("data").value;
+    document.getElementById("fecharCliente").onclick = function () {
+        cliente.style.display = "none";
+    };
 
-        const hora =
-            document.getElementById("hora").value;
+    document.getElementById("fecharInterno").onclick = function () {
+        interno.style.display = "none";
+    };
 
-        const formacao =
-            document.getElementById("formacao").value;
+    window.onclick = function (event) {
 
-        const valor =
-            num("valorCliente");
-
-
-        if(valor <= 0){
-
-            alert(
-                "Informe primeiro o valor que deseja cobrar."
-            );
-
-            return;
+        if (event.target === perfil) {
+            perfil.style.display = "none";
         }
 
+        if (event.target === cliente) {
+            cliente.style.display = "none";
+        }
 
-        const mensagem =
-`Olá, ${nome || "tudo bem"}! 😊
+        if (event.target === interno) {
+            interno.style.display = "none";
+        }
 
-Segue a proposta do AdaSamba para o seu evento. 🎶
-
-🎤 Formação:
-${formacao || "A combinar"}
-
-📅 D`;
-        
-        const link =
-            "https://wa.me/?text=" +
-            encodeURIComponent(mensagem);
-
-        window.open(link, "_blank");
-
-    });
+    };
 
 });
-
 </script>
 
 </body>
