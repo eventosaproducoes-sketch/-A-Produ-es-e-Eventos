@@ -20,8 +20,6 @@ body{
     color:#111;
 }
 
-/* CABEÇALHO */
-
 header{
     background:#111;
     color:#fff;
@@ -39,15 +37,11 @@ header p{
     font-size:16px;
 }
 
-/* CONTEÚDO */
-
 .container{
     max-width:900px;
     margin:auto;
     padding:25px 18px;
 }
-
-/* BUSCA */
 
 .search{
     width:100%;
@@ -58,8 +52,6 @@ header p{
     margin-bottom:18px;
     box-shadow:0 2px 10px rgba(0,0,0,.12);
 }
-
-/* CATEGORIAS */
 
 .categories{
     display:flex;
@@ -73,42 +65,26 @@ header p{
     border:0;
     padding:11px 17px;
     border-radius:25px;
-    white-space:nowrap;
+    cursor:pointer;
     background:#ddd;
     font-weight:bold;
-    cursor:pointer;
 }
-
-.categories button:hover{
-    background:#111;
-    color:#fff;
-}
-
-/* TÍTULO */
 
 .section-title{
-    font-size:24px;
-    margin-bottom:20px;
+    margin:10px 0 15px;
 }
-
-/* CARD */
 
 .card{
     background:#fff;
-    border-radius:20px;
+    border-radius:18px;
     overflow:hidden;
+    box-shadow:0 3px 14px rgba(0,0,0,.1);
     margin-bottom:20px;
-    box-shadow:0 4px 18px rgba(0,0,0,.12);
 }
 
 .photo{
-    width:100%;
-    height:240px;
-    background-image:url("./file_00000000ed2471f5b3c43399573a3899.png");
-    background-size:cover;
-    background-position:center;
-    background-repeat:no-repeat;
-    background-color:#ddd;
+    height:180px;
+    background:linear-gradient(135deg,#111,#555);
 }
 
 .content{
@@ -118,43 +94,33 @@ header p{
 .tag{
     display:inline-block;
     background:#eee;
-    padding:6px 11px;
+    padding:6px 10px;
     border-radius:20px;
-    font-size:14px;
-    margin-bottom:10px;
-}
-
-.content h2{
-    font-size:26px;
-    margin-bottom:8px;
+    font-size:12px;
 }
 
 .description{
-    color:#555;
+    margin:12px 0 18px;
     line-height:1.5;
-    margin-bottom:18px;
+    color:#444;
 }
-
-/* BOTÕES */
 
 .buttons{
     display:flex;
     gap:10px;
+    flex-wrap:wrap;
 }
 
 .btn{
-    flex:1;
     border:0;
-    padding:14px;
-    border-radius:11px;
-    font-weight:bold;
+    padding:12px 18px;
+    border-radius:10px;
     cursor:pointer;
-    font-size:14px;
+    font-weight:bold;
 }
 
 .btn-profile{
     background:#eee;
-    color:#111;
 }
 
 .btn-contract{
@@ -162,11 +128,27 @@ header p{
     color:#fff;
 }
 
-.btn:hover{
-    opacity:.85;
+.primary{
+    width:100%;
+    border:0;
+    background:#111;
+    color:#fff;
+    padding:15px;
+    border-radius:12px;
+    font-weight:bold;
+    font-size:16px;
+    cursor:pointer;
+    margin-top:16px;
 }
 
-/* MODAL */
+.secondary{
+    border:0;
+    background:#eee;
+    padding:12px;
+    border-radius:10px;
+    font-weight:bold;
+    cursor:pointer;
+}
 
 .modal{
     display:none;
@@ -174,121 +156,144 @@ header p{
     inset:0;
     background:rgba(0,0,0,.72);
     z-index:1000;
-    padding:12px;
-    overflow-y:auto;
+    overflow:auto;
+    padding:15px;
 }
 
 .modal-box{
-    width:100%;
-    max-width:520px;
+    max-width:750px;
+    margin:20px auto;
     background:#fff;
-    margin:10px auto;
-    border-radius:20px;
-    padding:22px;
-    position:relative;
+    border-radius:18px;
+    padding:24px;
 }
-
-/* BOTÃO FECHAR */
 
 .close{
-    position:absolute;
-    right:16px;
-    top:10px;
-    font-size:30px;
-    font-weight:bold;
+    float:right;
+    border:0;
+    background:#eee;
+    border-radius:50%;
+    width:38px;
+    height:38px;
+    font-size:22px;
     cursor:pointer;
-    color:#555;
 }
 
-/* FORMULÁRIO */
-
-.form{
-    margin-top:18px;
+h2{
+    margin-bottom:10px;
 }
 
-.form label{
+h3{
+    margin:25px 0 12px;
+}
+
+label{
     display:block;
     font-weight:bold;
-    margin-top:14px;
-    margin-bottom:6px;
+    margin:12px 0 6px;
 }
 
-.form input,
-.form select{
+input,
+select,
+textarea{
     width:100%;
     padding:13px;
     border:1px solid #ccc;
     border-radius:10px;
-    font-size:15px;
+    font-size:16px;
     background:#fff;
 }
 
-.form button{
-    width:100%;
-    padding:16px;
-    border:0;
-    border-radius:11px;
-    background:#111;
-    color:#fff;
-    font-size:16px;
-    font-weight:bold;
-    margin-top:20px;
-    cursor:pointer;
+textarea{
+    min-height:90px;
+    resize:vertical;
 }
 
-.form button:hover{
-    background:#333;
+.form-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:12px;
 }
 
-/* PERFIL */
+.full{
+    grid-column:1/-1;
+}
 
-.profile-text{
-    line-height:1.6;
-    color:#444;
+.address-box{
+    background:#f7f7f7;
+    padding:15px;
+    border-radius:12px;
+}
+
+.note{
+    font-size:12px;
+    color:#666;
+    margin-top:6px;
+    line-height:1.4;
+}
+
+.success{
+    padding:14px;
+    border-radius:10px;
+    background:#e8f5e9;
     margin-top:15px;
 }
 
-.profile-text strong{
-    color:#111;
-}
-
-/* RODAPÉ */
-
-footer{
+.internal{
     background:#111;
-    color:#ddd;
-    text-align:center;
-    padding:30px 20px;
-    margin-top:30px;
-}
-
-footer strong{
     color:#fff;
 }
 
-/* CELULAR */
+.internal-card{
+    background:#1e1e1e;
+    padding:18px;
+    border-radius:14px;
+    margin-top:15px;
+}
+
+.internal-card input,
+.internal-card select{
+    background:#fff;
+    color:#111;
+}
+
+.result{
+    background:#fff;
+    color:#111;
+    border-radius:12px;
+    padding:16px;
+    margin-top:15px;
+    line-height:1.8;
+}
+
+.money{
+    font-size:23px;
+    font-weight:bold;
+}
+
+hr{
+    margin:12px 0;
+    border:0;
+    border-top:1px solid #ddd;
+}
 
 @media(max-width:600px){
 
-    header h1{
-        font-size:27px;
-    }
-
-    .photo{
-        height:220px;
-    }
-
-    .buttons{
-        flex-direction:column;
+    .form-grid{
+        grid-template-columns:1fr;
     }
 
     .modal{
-        padding:8px;
+        padding:7px;
     }
 
     .modal-box{
-        margin:5px auto;
-        padding:20px;
+        margin:8px auto;
+        padding:18px;
+    }
+
+    header h1{
+        font-size:27px;
     }
 
 }
@@ -296,568 +301,1290 @@ footer strong{
 </style>
 </head>
 
-
 <body>
 
 <header>
 
-    <h1>🎶 AdaSamba & Eventos</h1>
+<h1>AdaSamba & Eventos</h1>
 
-    <p>
-        Música ao vivo para o seu evento
-    </p>
+<p>
+Samba, Pagode e MPB para o seu evento
+</p>
 
 </header>
 
 
 <main class="container">
 
-    <input
-        class="search"
-        id="search"
-        type="text"
-        placeholder="🔎 Procurar artista..."
-        oninput="filtrar()"
-    >
+
+<input
+    class="search"
+    id="search"
+    type="text"
+    placeholder="🔎 Procurar artista..."
+>
 
 
-    <div class="categories">
+<div class="categories">
 
-        <button onclick="categoria('Todos')">
-            Todos
-        </button>
+<button type="button" onclick="categoria('Todos')">
+Todos
+</button>
 
-        <button onclick="categoria('Samba')">
-            Samba
-        </button>
+<button type="button" onclick="categoria('Samba')">
+Samba
+</button>
 
-        <button onclick="categoria('Pagode')">
-            Pagode
-        </button>
+<button type="button" onclick="categoria('Pagode')">
+Pagode
+</button>
 
-        <button onclick="categoria('MPB')">
-            MPB
-        </button>
+<button type="button" onclick="categoria('MPB')">
+MPB
+</button>
 
-        <button onclick="categoria('Banda')">
-            Banda
-        </button>
+<button type="button" onclick="categoria('Banda')">
+Banda
+</button>
 
-    </div>
-
-
-    <h2 class="section-title">
-        🎤 Artistas
-    </h2>
+</div>
 
 
-    <div id="catalogo">
+<h2 class="section-title">
+🎤 Artistas
+</h2>
 
-        <!-- ADASAMBA -->
 
-        <div
-            class="card artista"
-            data-categoria="Samba,Pagode,MPB,Banda"
-        >
+<div id="catalogo">
 
-            <div class="photo"></div>
 
-            <div class="content">
+<div
+    class="card artista"
+    data-categoria="Samba,Pagode,MPB,Banda"
+>
 
-                <span class="tag">
-                    Samba • Pagode • MPB
-                </span>
 
-                <h2>
-                    AdaSamba
-                </h2>
+<div class="photo"></div>
 
-                <p class="description">
-                    Samba, pagode e MPB ao vivo para
-                    aniversários, festas, eventos,
-                    confraternizações, bares,
-                    restaurantes e celebrações.
-                </p>
 
-                <div class="buttons">
+<div class="content">
 
-                    <button
-                        class="btn btn-profile"
-                        type="button"
-                        onclick="perfil()"
-                    >
-                        VER PERFIL
-                    </button>
 
-                    <button
-                        class="btn btn-contract"
-                        type="button"
-                        onclick="contratar()"
-                    >
-                        CONTRATAR
-                    </button>
+<span class="tag">
+Samba • Pagode • MPB
+</span>
 
-                </div>
 
-            </div>
+<h2>
+AdaSamba
+</h2>
 
-        </div>
 
-    </div>
+<p class="description">
+
+Samba, pagode e MPB ao vivo para
+aniversários, festas, eventos,
+confraternizações, bares,
+restaurantes e celebrações.
+
+</p>
+
+
+<div class="buttons">
+
+
+<button
+    class="btn btn-profile"
+    type="button"
+    onclick="perfil()"
+>
+VER PERFIL
+</button>
+
+
+<button
+    class="btn btn-contract"
+    type="button"
+    onclick="contratar()"
+>
+CONTRATAR
+</button>
+
+
+</div>
+
+
+</div>
+
+</div>
+
+</div>
+
+
+<button
+    class="primary"
+    type="button"
+    onclick="abrirInterno()"
+>
+🔐 ÁREA INTERNA — ADA SAMBA
+</button>
+
 
 </main>
 
 
-<!-- MODAL DE CONTRATAÇÃO -->
+
+<!-- ========================= -->
+<!-- MODAL DO CLIENTE -->
+<!-- ========================= -->
+
 
 <div
     class="modal"
     id="modal"
 >
 
-    <div class="modal-box">
 
-        <span
-            class="close"
-            onclick="fechar()"
-        >
-            ×
-        </span>
-
-        <h2>
-            Solicitar orçamento
-        </h2>
-
-        <p style="margin-top:8px;color:#555;">
-            Preencha os dados do evento.
-        </p>
+<div class="modal-box">
 
 
-        <div class="form">
-
-            <label for="nome">
-                Nome
-            </label>
-
-            <input
-                id="nome"
-                type="text"
-                placeholder="Seu nome"
-            >
+<button
+    class="close"
+    type="button"
+    onclick="fechar()"
+>
+×
+</button>
 
 
-            <label for="telefone">
-                WhatsApp
-            </label>
-
-            <input
-                id="telefone"
-                type="tel"
-                placeholder="Seu WhatsApp"
-            >
+<h2>
+🎶 Solicitação de Orçamento
+</h2>
 
 
-            <label for="data">
-                Data do evento
-            </label>
+<p class="note">
 
-            <input
-                id="data"
-                type="date"
-            >
+Preencha os dados do evento.
+Os valores de cachê e transporte
+não serão exibidos nesta etapa.
 
-
-            <label for="hora">
-                Horário
-            </label>
-
-            <input
-                id="hora"
-                type="time"
-            >
+</p>
 
 
-            <label for="local">
-                Cidade / Local
-            </label>
 
-            <input
-                id="local"
-                type="text"
-                placeholder="Onde será o evento?"
-            >
+<form id="formCliente">
 
 
-            <label for="evento">
-                Tipo de evento
-            </label>
-
-            <select id="evento">
-
-                <option value="">
-                    Selecione
-                </option>
-
-                <option>
-                    Aniversário
-                </option>
-
-                <option>
-                    Casamento
-                </option>
-
-                <option>
-                    Evento empresarial
-                </option>
-
-                <option>
-                    Festa particular
-                </option>
-
-                <option>
-                    Bar / Restaurante
-                </option>
-
-                <option>
-                    Confraternização
-                </option>
-
-                <option>
-                    Evento cultural
-                </option>
-
-                <option>
-                    Outro
-                </option>
-
-            </select>
+<h3>
+👤 Seus dados
+</h3>
 
 
-            <label for="formacao">
-                🎤 Formação desejada
-            </label>
-
-            <select id="formacao">
-
-                <option value="">
-                    Selecione a formação
-                </option>
-
-                <option>
-                    Samba Trio
-                </option>
-
-                <option>
-                    Samba 4 Integrantes
-                </option>
-
-                <option>
-                    Banda Completa
-                </option>
-
-            </select>
+<div class="form-grid">
 
 
-            <label for="notaFiscal">
-                🧾 Precisa de Nota Fiscal?
-            </label>
+<div>
 
-            <select id="notaFiscal">
+<label for="nome">
+Nome
+</label>
 
-                <option value="">
-                    Selecione
-                </option>
-
-                <option>
-                    Sim
-                </option>
-
-                <option>
-                    Não
-                </option>
-
-                <option>
-                    Não sei
-                </option>
-
-            </select>
-
-
-            <label for="camisa">
-                👕 Cor da camisa
-            </label>
-
-            <select id="camisa">
-
-                <option value="">
-                    Selecione
-                </option>
-
-                <option>
-                    Preta
-                </option>
-
-                <option>
-                    Branca
-                </option>
-
-            </select>
-
-
-            <button
-                type="button"
-                onclick="enviar()"
-            >
-                📲 SOLICITAR ORÇAMENTO
-            </button>
-
-        </div>
-
-    </div>
+<input
+    id="nome"
+    type="text"
+    required
+>
 
 </div>
 
 
+<div>
+
+<label for="whatsapp">
+WhatsApp
+</label>
+
+<input
+    id="whatsapp"
+    type="tel"
+    placeholder="(00) 00000-0000"
+    required
+>
+
+</div>
+
+
+</div>
+
+
+
+<h3>
+📅 Dados do evento
+</h3>
+
+
+<div class="form-grid">
+
+
+<div>
+
+<label for="data">
+Data
+</label>
+
+<input
+    id="data"
+    type="date"
+    required
+>
+
+</div>
+
+
+<div>
+
+<label for="hora">
+Horário
+</label>
+
+<input
+    id="hora"
+    type="time"
+    required
+>
+
+</div>
+
+
+<div>
+
+<label for="tipo">
+Tipo de evento
+</label>
+
+<select id="tipo" required>
+
+<option value="">
+Selecione
+</option>
+
+<option>
+Aniversário
+</option>
+
+<option>
+Casamento
+</option>
+
+<option>
+Evento empresarial
+</option>
+
+<option>
+Festa particular
+</option>
+
+<option>
+Bar / Restaurante
+</option>
+
+<option>
+Confraternização
+</option>
+
+<option>
+Evento cultural
+</option>
+
+<option>
+Outro
+</option>
+
+</select>
+
+</div>
+
+
+<div>
+
+<label for="formacao">
+Formação desejada
+</label>
+
+<select id="formacao" required>
+
+<option value="">
+Selecione
+</option>
+
+<option>
+Samba Trio
+</option>
+
+<option>
+Samba 4 Integrantes
+</option>
+
+<option>
+Banda Completa
+</option>
+
+</select>
+
+</div>
+
+
+</div>
+
+
+
+<!-- ENDEREÇO -->
+
+
+<h3>
+📍 Endereço completo do evento
+</h3>
+
+
+<label for="enderecoEvento">
+
+Buscar endereço
+
+</label>
+
+
+<input
+    id="enderecoEvento"
+    type="text"
+    placeholder="Digite rua, número, bairro ou local"
+    autocomplete="off"
+    required
+>
+
+
+<p class="note">
+
+Quando o Google Maps estiver conectado,
+o cliente poderá selecionar uma sugestão
+de endereço.
+
+</p>
+
+
+<div class="address-box">
+
+
+<div class="form-grid">
+
+
+<div>
+
+<label for="rua">
+Rua
+</label>
+
+<input
+    id="rua"
+    type="text"
+>
+
+</div>
+
+
+<div>
+
+<label for="numero">
+Número
+</label>
+
+<input
+    id="numero"
+    type="text"
+    required
+>
+
+</div>
+
+
+<div>
+
+<label for="bairro">
+Bairro
+</label>
+
+<input
+    id="bairro"
+    type="text"
+>
+
+</div>
+
+
+<div>
+
+<label for="cep">
+CEP
+</label>
+
+<input
+    id="cep"
+    type="text"
+>
+
+</div>
+
+
+<div>
+
+<label for="cidade">
+Cidade
+</label>
+
+<input
+    id="cidade"
+    type="text"
+    required
+>
+
+</div>
+
+
+<div>
+
+<label for="estado">
+Estado
+</label>
+
+<input
+    id="estado"
+    type="text"
+>
+
+</div>
+
+
+</div>
+
+</div>
+
+
+
+<h3>
+🧾 Nota Fiscal
+</h3>
+
+
+<select
+    id="notaFiscal"
+    required
+>
+
+<option value="">
+Selecione
+</option>
+
+<option>
+Sim
+</option>
+
+<option>
+Não
+</option>
+
+<option>
+Não sei
+</option>
+
+</select>
+
+
+
+<h3>
+👕 Cor da camisa
+</h3>
+
+
+<select id="camisa">
+
+<option>
+Preta
+</option>
+
+<option>
+Branca
+</option>
+
+<option>
+Outra
+</option>
+
+</select>
+
+
+
+<label for="observacoes">
+
+📝 Observações
+
+</label>
+
+
+<textarea
+    id="observacoes"
+    placeholder="Alguma informação importante?"
+></textarea>
+
+
+
+<button
+    class="primary"
+    type="submit"
+>
+📲 ENVIAR SOLICITAÇÃO
+</button>
+
+
+<div id="clienteMsg"></div>
+
+
+</form>
+
+
+</div>
+
+</div>
+
+
+
+<!-- ========================= -->
 <!-- MODAL PERFIL -->
+<!-- ========================= -->
+
 
 <div
     class="modal"
     id="modalPerfil"
 >
 
-    <div class="modal-box">
 
-        <span
-            class="close"
-            onclick="fecharPerfil()"
-        >
-            ×
-        </span>
+<div class="modal-box">
 
-        <h2>
-            🎤 AdaSamba
-        </h2>
 
-        <div class="profile-text">
+<button
+    class="close"
+    type="button"
+    onclick="fecharPerfil()"
+>
+×
+</button>
 
-            <p>
-                <strong>Samba • Pagode • MPB</strong>
-            </p>
 
-            <br>
+<h2>
+🎶 AdaSamba
+</h2>
 
-            <p>
-                AdaSamba apresenta música ao vivo
-                para eventos, festas, aniversários,
-                confraternizações, bares,
-                restaurantes e eventos culturais.
-            </p>
 
-            <br>
+<p
+    style="
+    line-height:1.7;
+    margin-top:15px;
+    "
+>
 
-            <p>
-                <strong>Formações disponíveis:</strong>
-            </p>
+Samba, Pagode e MPB ao vivo
+para aniversários, festas,
+bares, restaurantes,
+eventos empresariais,
+eventos culturais e confraternizações.
 
-            <p>
-                • Samba Trio<br>
-                • Samba 4 Integrantes<br>
-                • Banda Completa
-            </p>
+</p>
 
-            <br>
 
-            <p>
-                Entre em contato para verificar
-                disponibilidade e receber seu orçamento.
-            </p>
-
-        </div>
-
-    </div>
+</div>
 
 </div>
 
 
-<footer>
 
-    <p>
-        <strong>AdaSamba & Eventos</strong>
-    </p>
+<!-- ========================= -->
+<!-- ÁREA INTERNA -->
+<!-- ========================= -->
 
-    <p style="margin-top:8px;">
-        Música ao vivo para seu evento.
-    </p>
 
-    <p style="margin-top:15px;">
-        © 2026 AdaSamba
-    </p>
+<div
+    class="modal"
+    id="modalInterno"
+>
 
-</footer>
+
+<div class="modal-box internal">
+
+
+<button
+    class="close"
+    type="button"
+    onclick="fecharInterno()"
+>
+×
+</button>
+
+
+<h2>
+🔐 Área Interna — AdaSamba
+</h2>
+
+
+<p
+    class="note"
+    style="color:#bbb"
+>
+
+Esta área é somente para
+controle interno.
+
+Os valores não serão
+exibidos ao cliente.
+
+</p>
+
+
+
+<!-- ENDEREÇO DE SAÍDA -->
+
+
+<div class="internal-card">
+
+
+<h3>
+🏠 Endereço de saída da banda
+</h3>
+
+
+<label for="origem">
+
+Endereço de saída
+
+</label>
+
+
+<input
+    id="origem"
+    type="text"
+    placeholder="Digite o endereço de saída da banda"
+>
+
+
+<p
+    class="note"
+    style="color:#bbb"
+>
+
+Este endereço será utilizado
+como origem para o cálculo
+da rota.
+
+</p>
+
+
+</div>
+
+
+
+<!-- TRANSPORTE -->
+
+
+<div class="internal-card">
+
+
+<h3>
+🚗 Configuração do transporte
+</h3>
+
+
+<div class="form-grid">
+
+
+<div>
+
+<label for="valorKm">
+
+Valor por km
+
+</label>
+
+<input
+    id="valorKm"
+    type="number"
+    min="0"
+    step="0.01"
+    value="2.00"
+>
+
+</div>
+
+
+<div>
+
+<label for="pedagio">
+
+Pedágio
+
+</label>
+
+<input
+    id="pedagio"
+    type="number"
+    min="0"
+    step="0.01"
+    value="0"
+>
+
+</div>
+
+
+<div>
+
+<label for="estacionamento">
+
+Estacionamento
+
+</label>
+
+<input
+    id="estacionamento"
+    type="number"
+    min="0"
+    step="0.01"
+    value="0"
+>
+
+</div>
+
+
+<div>
+
+<label for="alimentacao">
+
+Alimentação
+
+</label>
+
+<input
+    id="alimentacao"
+    type="number"
+    min="0"
+    step="0.01"
+    value="0"
+>
+
+</div>
+
+
+<div>
+
+<label for="hospedagem">
+
+Hospedagem
+
+</label>
+
+<input
+    id="hospedagem"
+    type="number"
+    min="0"
+    step="0.01"
+    value="0"
+>
+
+</div>
+
+
+<div>
+
+<label for="outros">
+
+Outros custos
+
+</label>
+
+<input
+    id="outros"
+    type="number"
+    min="0"
+    step="0.01"
+    value="0"
+>
+
+</div>
+
+
+</div>
+
+
+<label
+    style="
+    display:flex;
+    align-items:center;
+    gap:8px;
+    "
+>
+
+
+<input
+    id="idaVolta"
+    type="checkbox"
+    checked
+    style="width:auto"
+>
+
+
+Considerar ida e volta
+
+
+</label>
+
+
+</div>
+
+
+
+<!-- CACHÊS -->
+
+
+<div class="internal-card">
+
+
+<h3>
+🎵 Cachês dos músicos
+</h3>
+
+
+<div class="form-grid">
+
+
+<div>
+
+<label>
+Músico 1
+</label>
+
+<input
+    class="musico"
+    type="number"
+    min="0"
+    step="0.01"
+    value="0"
+>
+
+</div>
+
+
+<div>
+
+<label>
+Músico 2
+</label>
+
+<input
+    class="musico"
+    type="number"
+    min="0"
+    step="0.01"
+    value="0"
+>
+
+</div>
+
+
+<div>
+
+<label>
+Músico 3
+</label>
+
+<input
+    class="musico"
+    type="number"
+    min="0"
+    step="0.01"
+    value="0"
+>
+
+</div>
+
+
+<div>
+
+<label>
+Músico 4
+</label>
+
+<input
+    class="musico"
+    type="number"
+    min="0"
+    step="0.01"
+    value="0"
+>
+
+</div>
+
+
+<div>
+
+<label>
+Músico 5
+</label>
+
+<input
+    class="musico"
+    type="number"
+    min="0"
+    step="0.01"
+    value="0"
+>
+
+</div>
+
+
+<div>
+
+<label>
+Músico 6
+</label>
+
+<input
+    class="musico"
+    type="number"
+    min="0"
+    step="0.01"
+    value="0"
+>
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+
+<!-- APRESENTAÇÃO -->
+
+
+<div class="internal-card">
+
+
+<h3>
+🎤 Apresentação e Nota Fiscal
+</h3>
+
+
+<div class="form-grid">
+
+
+<div>
+
+<label for="cache">
+
+Valor da apresentação
+
+</label>
+
+<input
+    id="cache"
+    type="number"
+    min="0"
+    step="0.01"
+    value="0"
+>
+
+</div>
+
+
+<div>
+
+<label for="nfPercent">
+
+Percentual da Nota Fiscal (%)
+
+</label>
+
+<input
+    id="nfPercent"
+    type="number"
+    min="0"
+    step="0.01"
+    value="0"
+>
+
+</div>
+
+
+<div class="full">
+
+<label for="valorVenda">
+
+💵 Valor final que quero apresentar ao cliente
+
+</label>
+
+<input
+    id="valorVenda"
+    type="number"
+    min="0"
+    step="0.01"
+    value="0"
+>
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+
+<!-- ROTA -->
+
+
+<div class="internal-card">
+
+
+<h3>
+📍 Rota do evento
+</h3>
+
+
+<label for="destinoInterno">
+
+Destino do evento
+
+</label>
+
+
+<input
+    id="destinoInterno"
+    type="text"
+    placeholder="Digite o endereço do evento"
+>
+
+
+<label for="kmManual">
+
+Distância em km
+
+</label>
+
+
+<input
+    id="kmManual"
+    type="number"
+    min="0"
+    step="0.1"
+    value="0"
+>
+
+
+<p
+    class="note"
+    style="color:#bbb"
+>
+
+Por enquanto você pode
+informar os quilômetros
+manualmente. Na integração
+com Google Maps, essa distância
+será calculada automaticamente.
+
+</p>
+
+
+<button
+    class="primary"
+    id="calcularBtn"
+    type="button"
+>
+🚗 CALCULAR TRANSPORTE
+</button>
+
+
+<div
+    id="resultadoInterno"
+    class="result"
+>
+Aguardando cálculo.
+</div>
+
+
+</div>
+
+
+
+<!-- RESULTADO -->
+
+
+<div class="internal-card">
+
+
+<h3>
+📊 Resultado financeiro
+</h3>
+
+
+<div
+    id="resumoFinanceiro"
+    class="result"
+>
+
+Preencha os valores
+e clique em calcular.
+
+</div>
+
+
+<button
+    class="primary"
+    type="button"
+    onclick="gerarProposta()"
+>
+
+📲 GERAR PROPOSTA PARA WHATSAPP
+
+</button>
+
+
+</div>
+
+
+</div>
+
+</div>
+
 
 
 <script>
 
-/* ABRIR CONTRATAÇÃO */
 
-function contratar(){
+/* ========================= */
+/* FUNÇÕES DOS MODAIS */
+/* ========================= */
 
-    document.getElementById(
-        "modal"
-    ).style.display = "block";
-
-}
-
-
-/* FECHAR CONTRATAÇÃO */
-
-function fechar(){
-
-    document.getElementById(
-        "modal"
-    ).style.display = "none";
-
-}
-
-
-/* ABRIR PERFIL */
 
 function perfil(){
 
-    document.getElementById(
-        "modalPerfil"
-    ).style.display = "block";
+    document
+    .getElementById("modalPerfil")
+    .style.display="block";
 
 }
 
-
-/* FECHAR PERFIL */
 
 function fecharPerfil(){
 
-    document.getElementById(
-        "modalPerfil"
-    ).style.display = "none";
+    document
+    .getElementById("modalPerfil")
+    .style.display="none";
 
 }
 
 
-/* ENVIAR PARA WHATSAPP */
+function contratar(){
 
-function enviar(){
+    document
+    .getElementById("modal")
+    .style.display="block";
 
-    const nome =
-        document.getElementById("nome").value.trim();
-
-    const telefone =
-        document.getElementById("telefone").value.trim();
-
-    const data =
-        document.getElementById("data").value;
-
-    const hora =
-        document.getElementById("hora").value;
-
-    const local =
-        document.getElementById("local").value.trim();
-
-    const evento =
-        document.getElementById("evento").value;
-
-    const formacao =
-        document.getElementById("formacao").value;
-
-    const notaFiscal =
-        document.getElementById("notaFiscal").value;
-
-    const camisa =
-        document.getElementById("camisa").value;
+}
 
 
-    if(
-        !nome ||
-        !telefone ||
-        !data ||
-        !hora ||
-        !local ||
-        !evento ||
-        !formacao ||
-        !notaFiscal ||
-        !camisa
-    ){
+function fechar(){
 
-        alert(
-            "Por favor, preencha todos os campos."
-        );
+    document
+    .getElementById("modal")
+    .style.display="none";
 
-        return;
+}
+
+
+function abrirInterno(){
+
+    document
+    .getElementById("modalInterno")
+    .style.display="block";
+
+}
+
+
+function fecharInterno(){
+
+    document
+    .getElementById("modalInterno")
+    .style.display="none";
+
+}
+
+
+
+/* ========================= */
+/* FECHAR CLICANDO FORA */
+/* ========================= */
+
+
+window.addEventListener(
+    "click",
+    function(event){
+
+        if(
+            event.target ===
+            document.getElementById("modal")
+        ){
+
+            fechar();
+
+        }
+
+
+        if(
+            event.target ===
+            document.getElementById("modalPerfil")
+        ){
+
+            fecharPerfil();
+
+        }
+
+
+        if(
+            event.target ===
+            document.getElementById("modalInterno")
+        ){
+
+            fecharInterno();
+
+        }
 
     }
+);
 
 
-    const mensagem =
 
-        "Olá! Gostaria de solicitar um orçamento.%0A%0A" +
-
-        "🎤 Artista: AdaSamba%0A" +
-
-        "👤 Nome: " +
-        encodeURIComponent(nome) +
-        "%0A" +
-
-        "📱 WhatsApp: " +
-        encodeURIComponent(telefone) +
-        "%0A" +
-
-        "📅 Data: " +
-        encodeURIComponent(data) +
-        "%0A" +
-
-        "⏰ Horário: " +
-        encodeURIComponent(hora) +
-        "%0A" +
-
-        "📍 Local: " +
-        encodeURIComponent(local) +
-        "%0A" +
-
-        "🎉 Evento: " +
-        encodeURIComponent(evento) +
-        "%0A" +
-
-        "🎤 Formação: " +
-        encodeURIComponent(formacao) +
-        "%0A" +
-
-        "🧾 Nota Fiscal: " +
-        encodeURIComponent(notaFiscal) +
-        "%0A" +
-
-        "👕 Cor da camisa: " +
-        encodeURIComponent(camisa) +
-        "%0A%0A" +
-
-        "Gostaria de receber informações " +
-        "sobre disponibilidade e orçamento.";
+/* ========================= */
+/* BUSCA */
+/* ========================= */
 
 
-    const numero =
-        "5511958225834";
+document
+.getElementById("search")
+.addEventListener(
+    "input",
+    filtrar
+);
 
-
-    const url =
-        "https://wa.me/" +
-        numero +
-        "?text=" +
-        mensagem;
-
-
-    window.location.href = url;
-
-}
-
-
-/* PESQUISA */
 
 function filtrar(){
 
@@ -869,112 +1596,276 @@ function filtrar(){
         .trim();
 
 
-    const cards =
-        document.querySelectorAll(
-            ".artista"
-        );
+    document
+    .querySelectorAll(".artista")
+    .forEach(
+        function(card){
+
+            const texto =
+                card.innerText
+                .toLowerCase();
 
 
-    cards.forEach(function(card){
+            if(
+                texto.includes(busca)
+            ){
 
-        const texto =
-            card.innerText.toLowerCase();
+                card.style.display="block";
 
+            }else{
 
-        if(
-            texto.includes(busca)
-        ){
+                card.style.display="none";
 
-            card.style.display =
-                "block";
-
-        }else{
-
-            card.style.display =
-                "none";
+            }
 
         }
-
-    });
+    );
 
 }
 
 
+
+/* ========================= */
 /* CATEGORIAS */
+/* ========================= */
+
 
 function categoria(cat){
 
-    const cards =
-        document.querySelectorAll(
-            ".artista"
-        );
+    document
+    .querySelectorAll(".artista")
+    .forEach(
+        function(card){
+
+            if(cat==="Todos"){
+
+                card.style.display="block";
+
+                return;
+
+            }
 
 
-    cards.forEach(function(card){
-
-        if(cat === "Todos"){
-
-            card.style.display =
-                "block";
-
-            return;
-
-        }
+            const categorias =
+                card.dataset.categoria;
 
 
-        const categorias =
-            card.dataset.categoria;
+            if(
+                categorias.includes(cat)
+            ){
 
+                card.style.display="block";
 
-        if(
-            categorias.includes(cat)
-        ){
+            }else{
 
-            card.style.display =
-                "block";
+                card.style.display="none";
 
-        }else{
-
-            card.style.display =
-                "none";
+            }
 
         }
-
-    });
+    );
 
 }
 
 
-/* FECHAR MODAIS AO CLICAR FORA */
 
-window.addEventListener(
-    "click",
+/* ========================= */
+/* FORMATAÇÃO DE DINHEIRO */
+/* ========================= */
+
+
+function dinheiro(valor){
+
+    return new Intl.NumberFormat(
+        "pt-BR",
+        {
+            style:"currency",
+            currency:"BRL"
+        }
+    ).format(
+        Number(valor)||0
+    );
+
+}
+
+
+
+/* ========================= */
+/* FORMULÁRIO DO CLIENTE */
+/* ========================= */
+
+
+document
+.getElementById("formCliente")
+.addEventListener(
+    "submit",
     function(event){
 
-        const modal =
-            document.getElementById("modal");
-
-        const modalPerfil =
-            document.getElementById("modalPerfil");
+        event.preventDefault();
 
 
-        if(event.target === modal){
+        const nome =
+            document
+            .getElementById("nome")
+            .value
+            .trim();
 
-            fechar();
 
-        }
+        const whatsapp =
+            document
+            .getElementById("whatsapp")
+            .value
+            .trim();
 
 
-        if(event.target === modalPerfil){
+        const data =
+            document
+            .getElementById("data")
+            .value;
 
-            fecharPerfil();
 
-        }
+        const hora =
+            document
+            .getElementById("hora")
+            .value;
 
-    }
-);
 
-</script>
+        const tipo =
+            document
+            .getElementById("tipo")
+            .value;
 
-</body>
-</html>
+
+        const formacao =
+            document
+            .getElementById("formacao")
+            .value;
+
+
+        const rua =
+            document
+            .getElementById("rua")
+            .value
+            .trim();
+
+
+        const numero =
+            document
+            .getElementById("numero")
+            .value
+            .trim();
+
+
+        const bairro =
+            document
+            .getElementById("bairro")
+            .value
+            .trim();
+
+
+        const cep =
+            document
+            .getElementById("cep")
+            .value
+            .trim();
+
+
+        const cidade =
+            document
+            .getElementById("cidade")
+            .value
+            .trim();
+
+
+        const estado =
+            document
+            .getElementById("estado")
+            .value
+            .trim();
+
+
+        const notaFiscal =
+            document
+            .getElementById("notaFiscal")
+            .value;
+
+
+        const camisa =
+            document
+            .getElementById("camisa")
+            .value;
+
+
+        const observacoes =
+            document
+            .getElementById("observacoes")
+            .value
+            .trim();
+
+
+        const endereco =
+            [
+                rua,
+                numero,
+                bairro,
+                cidade,
+                estado,
+                cep
+            ]
+            .filter(Boolean)
+            .join(", ");
+
+
+        const mensagem =
+
+`Olá! Gostaria de solicitar um orçamento.
+
+🎤 Artista: AdaSamba
+
+👤 Nome: ${nome}
+
+📱 WhatsApp: ${whatsapp}
+
+📅 Data: ${data}
+
+⏰ Horário: ${hora}
+
+📍 Endereço:
+${endereco}
+
+🎉 Evento:
+${tipo}
+
+🎶 Formação:
+${formacao}
+
+🧾 Nota Fiscal:
+${notaFiscal}
+
+👕 Cor da camisa:
+${camisa}
+
+📝 Observações:
+${observacoes || "Nenhuma"}`;
+
+
+        const link =
+            "https://wa.me/?text=" +
+            encodeURIComponent(mensagem);
+
+
+        document
+        .getElementById("clienteMsg")
+        .innerHTML =
+
+        `
+        <div class="success">
+
+        Solicitação preparada.
+
+        </div>
+
+        <a
+            class="primary"
+            style="
+            display:
