@@ -3,11 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>AdaSamba & Eventos</title>
 
 <style>
-
 *{
     box-sizing:border-box;
     margin:0;
@@ -22,7 +20,7 @@ body{
 
 header{
     background:#111;
-    color:#fff;
+    color:white;
     text-align:center;
     padding:35px 20px;
 }
@@ -34,10 +32,10 @@ header h1{
 
 header p{
     color:#ddd;
-    font-size:16px;
 }
 
 .container{
+    width:100%;
     max-width:900px;
     margin:auto;
     padding:25px 18px;
@@ -45,12 +43,12 @@ header p{
 
 .search{
     width:100%;
-    padding:15px;
+    padding:16px;
     border:0;
-    border-radius:12px;
-    font-size:16px;
+    border-radius:14px;
+    font-size:17px;
     margin-bottom:18px;
-    box-shadow:0 2px 10px rgba(0,0,0,.12);
+    box-shadow:0 2px 12px rgba(0,0,0,.12);
 }
 
 .categories{
@@ -63,125 +61,137 @@ header p{
 
 .categories button{
     border:0;
-    padding:11px 17px;
-    border-radius:25px;
-    cursor:pointer;
     background:#ddd;
+    padding:12px 20px;
+    border-radius:30px;
     font-weight:bold;
+    white-space:nowrap;
+    cursor:pointer;
 }
 
 .section-title{
-    margin:10px 0 15px;
+    margin:15px 0;
+    font-size:28px;
 }
 
 .card{
-    background:#fff;
-    border-radius:18px;
+    background:white;
+    border-radius:20px;
     overflow:hidden;
-    box-shadow:0 3px 14px rgba(0,0,0,.1);
-    margin-bottom:20px;
+    box-shadow:0 4px 18px rgba(0,0,0,.12);
+    margin-bottom:25px;
 }
 
 .photo{
-    height:180px;
-    background:linear-gradient(135deg,#111,#555);
+    height:210px;
+    background:linear-gradient(135deg,#111,#444);
 }
 
 .content{
-    padding:20px;
+    padding:22px;
 }
 
 .tag{
     display:inline-block;
     background:#eee;
-    padding:6px 10px;
+    padding:8px 12px;
     border-radius:20px;
-    font-size:12px;
+    font-size:13px;
+}
+
+.content h2{
+    margin-top:10px;
+    font-size:30px;
 }
 
 .description{
-    margin:12px 0 18px;
-    line-height:1.5;
-    color:#444;
+    margin:15px 0 20px;
+    color:#555;
+    line-height:1.6;
+    font-size:17px;
 }
 
 .buttons{
     display:flex;
-    gap:10px;
+    gap:12px;
     flex-wrap:wrap;
 }
 
 .btn{
     border:0;
-    padding:12px 18px;
-    border-radius:10px;
-    cursor:pointer;
+    padding:14px 20px;
+    border-radius:30px;
     font-weight:bold;
+    font-size:15px;
+    cursor:pointer;
 }
 
-.btn-profile{
+.profile-btn{
     background:#eee;
 }
 
-.btn-contract{
+.contract-btn{
     background:#111;
-    color:#fff;
+    color:white;
 }
 
-.primary{
+.internal-open{
     width:100%;
-    border:0;
+    padding:16px;
     background:#111;
-    color:#fff;
-    padding:15px;
-    border-radius:12px;
-    font-weight:bold;
+    color:white;
+    border:0;
+    border-radius:14px;
     font-size:16px;
+    font-weight:bold;
     cursor:pointer;
-    margin-top:16px;
 }
 
 .modal{
     display:none;
     position:fixed;
+    z-index:9999;
     inset:0;
     background:rgba(0,0,0,.75);
-    z-index:1000;
     overflow:auto;
     padding:15px;
 }
 
 .modal-box{
+    width:100%;
     max-width:760px;
     margin:20px auto;
-    background:#fff;
-    border-radius:18px;
+    background:white;
+    border-radius:20px;
     padding:24px;
+}
+
+.modal-box.internal{
+    background:#111;
+    color:white;
 }
 
 .close{
     float:right;
-    border:0;
-    background:#eee;
-    border-radius:50%;
     width:38px;
     height:38px;
-    font-size:22px;
+    border:0;
+    border-radius:50%;
+    background:#eee;
+    font-size:23px;
     cursor:pointer;
 }
 
-h2{
-    margin-bottom:10px;
-}
-
 h3{
-    margin:25px 0 12px;
+    margin-top:25px;
+    margin-bottom:12px;
 }
 
 label{
     display:block;
+    margin-top:12px;
+    margin-bottom:6px;
     font-weight:bold;
-    margin:12px 0 6px;
 }
 
 input,
@@ -192,65 +202,63 @@ textarea{
     border:1px solid #ccc;
     border-radius:10px;
     font-size:16px;
-    background:#fff;
+    background:white;
 }
 
 textarea{
-    min-height:90px;
+    min-height:100px;
     resize:vertical;
 }
 
-.form-grid{
+.grid{
     display:grid;
     grid-template-columns:1fr 1fr;
     gap:12px;
 }
 
 .full{
-    grid-column:1/-1;
+    grid-column:1 / -1;
 }
 
-.address-box{
-    background:#f7f7f7;
+.address{
+    background:#f5f5f5;
     padding:15px;
     border-radius:12px;
 }
 
-.note{
-    font-size:12px;
-    color:#666;
-    margin-top:6px;
-    line-height:1.4;
-}
-
-.success{
-    padding:14px;
-    border-radius:10px;
-    background:#e8f5e9;
-    margin-top:15px;
-}
-
-.internal{
-    background:#111;
-    color:#fff;
-}
-
 .internal-card{
-    background:#1f1f1f;
+    background:#202020;
     padding:18px;
     border-radius:14px;
     margin-top:15px;
 }
 
 .internal-card input,
-.internal-card select,
-.internal-card textarea{
-    background:#fff;
+.internal-card select{
+    background:white;
+    color:#111;
+}
+
+.primary{
+    width:100%;
+    padding:15px;
+    margin-top:18px;
+    border:0;
+    border-radius:12px;
+    background:#111;
+    color:white;
+    font-size:16px;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+.internal .primary{
+    background:white;
     color:#111;
 }
 
 .result{
-    background:#fff;
+    background:white;
     color:#111;
     border-radius:12px;
     padding:16px;
@@ -258,2165 +266,756 @@ textarea{
     line-height:1.8;
 }
 
-.money{
-    font-size:23px;
+.result strong{
     font-weight:bold;
 }
 
-hr{
-    margin:14px 0;
-    border:0;
-    border-top:1px solid #ddd;
+.big{
+    font-size:24px;
+    font-weight:bold;
 }
 
-.status{
-    display:inline-block;
-    padding:7px 10px;
-    border-radius:20px;
-    background:#eee;
-    color:#111;
-    font-size:12px;
+.info{
+    font-size:13px;
+    color:#777;
+    margin-top:7px;
+    line-height:1.5;
+}
+
+.internal .info{
+    color:#bbb;
+}
+
+.success{
+    background:#e8f5e9;
+    padding:15px;
+    border-radius:12px;
+    margin-top:15px;
+    color:#1b5e20;
+}
+
+.whatsapp{
+    display:block;
+    text-align:center;
+    text-decoration:none;
+    background:#111;
+    color:white;
+    padding:15px;
+    border-radius:12px;
+    margin-top:12px;
     font-weight:bold;
 }
 
 @media(max-width:600px){
 
-    .form-grid{
+    .grid{
         grid-template-columns:1fr;
     }
 
-    .modal{
-        padding:7px;
-    }
-
-    .modal-box{
-        margin:8px auto;
-        padding:18px;
+    .full{
+        grid-column:auto;
     }
 
     header h1{
         font-size:27px;
     }
 
-}
+    .modal-box{
+        margin:5px auto;
+        padding:18px;
+    }
 
+}
 </style>
 </head>
 
 <body>
 
-
-<!-- ========================= -->
-<!-- CABEÇALHO -->
-<!-- ========================= -->
-
 <header>
-
-<h1>
-AdaSamba & Eventos
-</h1>
-
-<p>
-Samba, Pagode e MPB para o seu evento
-</p>
-
+    <h1>AdaSamba & Eventos</h1>
+    <p>Samba, Pagode e MPB para o seu evento</p>
 </header>
-
-
-
-<!-- ========================= -->
-<!-- PÁGINA PRINCIPAL -->
-<!-- ========================= -->
 
 <main class="container">
 
+    <input
+        id="search"
+        class="search"
+        type="text"
+        placeholder="🔎 Procurar artista..."
+    >
 
-<input
-    class="search"
-    id="search"
-    type="text"
-    placeholder="🔎 Procurar artista..."
->
+    <div class="categories">
+        <button data-cat="Todos">Todos</button>
+        <button data-cat="Samba">Samba</button>
+        <button data-cat="Pagode">Pagode</button>
+        <button data-cat="MPB">MPB</button>
+        <button data-cat="Banda">Banda</button>
+    </div>
 
+    <h2 class="section-title">🎤 Artistas</h2>
 
-<div class="categories">
+    <div id="catalogo">
 
-<button type="button" onclick="categoria('Todos')">
-Todos
-</button>
+        <div
+            class="card artista"
+            data-categoria="Samba,Pagode,MPB,Banda"
+        >
 
-<button type="button" onclick="categoria('Samba')">
-Samba
-</button>
+            <div class="photo"></div>
 
-<button type="button" onclick="categoria('Pagode')">
-Pagode
-</button>
+            <div class="content">
 
-<button type="button" onclick="categoria('MPB')">
-MPB
-</button>
+                <span class="tag">
+                    Samba • Pagode • MPB
+                </span>
 
-<button type="button" onclick="categoria('Banda')">
-Banda
-</button>
+                <h2>AdaSamba</h2>
 
-</div>
+                <p class="description">
+                    Samba, pagode e MPB ao vivo para
+                    aniversários, festas, eventos,
+                    confraternizações, bares,
+                    restaurantes e celebrações.
+                </p>
 
+                <div class="buttons">
 
-<h2 class="section-title">
-🎤 Artistas
-</h2>
+                    <button
+                        class="btn profile-btn"
+                        id="btnPerfil"
+                        type="button"
+                    >
+                        VER PERFIL
+                    </button>
 
+                    <button
+                        class="btn contract-btn"
+                        id="btnContratar"
+                        type="button"
+                    >
+                        CONTRATAR
+                    </button>
 
-<div id="catalogo">
+                </div>
 
+            </div>
+        </div>
 
-<!-- ADASAMBA -->
+    </div>
 
-<div
-    class="card artista"
-    data-categoria="Samba,Pagode,MPB,Banda"
->
-
-
-<div class="photo"></div>
-
-
-<div class="content">
-
-
-<span class="tag">
-Samba • Pagode • MPB
-</span>
-
-
-<h2>
-AdaSamba
-</h2>
-
-
-<p class="description">
-
-Samba, pagode e MPB ao vivo para
-aniversários, festas, eventos,
-confraternizações, bares,
-restaurantes e celebrações.
-
-</p>
-
-
-<div class="buttons">
-
-
-<button
-    class="btn btn-profile"
-    type="button"
-    onclick="perfil()"
->
-VER PERFIL
-</button>
-
-
-<button
-    class="btn btn-contract"
-    type="button"
-    onclick="contratar()"
->
-CONTRATAR
-</button>
-
-
-</div>
-
-
-</div>
-
-</div>
-
-</div>
-
-
-<button
-    class="primary"
-    type="button"
-    onclick="abrirInterno()"
->
-🔐 ÁREA INTERNA — ADA SAMBA
-</button>
-
+    <button
+        class="internal-open"
+        id="btnInterno"
+        type="button"
+    >
+        🔐 ÁREA INTERNA — ADA SAMBA
+    </button>
 
 </main>
 
 
-
-<!-- ========================= -->
-<!-- MODAL DO CLIENTE -->
-<!-- ========================= -->
-
-<div
-    class="modal"
-    id="modal"
->
-
-
-<div class="modal-box">
-
-
-<button
-    class="close"
-    type="button"
-    onclick="fechar()"
->
-×
-</button>
-
-
-<h2>
-🎶 Solicitação de Orçamento
-</h2>
-
-
-<p class="note">
-
-Preencha as informações do evento.
-Os valores internos não serão exibidos.
-
-</p>
-
-
-<form id="formCliente">
-
-
-<!-- DADOS DO CLIENTE -->
-
-<h3>
-👤 Dados do cliente
-</h3>
-
-
-<div class="form-grid">
-
-
-<div>
-
-<label for="nome">
-Nome
-</label>
-
-<input
-    id="nome"
-    type="text"
-    required
->
-
-</div>
-
-
-<div>
-
-<label for="whatsapp">
-WhatsApp
-</label>
-
-<input
-    id="whatsapp"
-    type="tel"
-    placeholder="(00) 00000-0000"
-    required
->
-
-</div>
-
-
-</div>
-
-
-
-<!-- EVENTO -->
-
-<h3>
-📅 Dados do evento
-</h3>
-
-
-<div class="form-grid">
-
-
-<div>
-
-<label for="data">
-Data
-</label>
-
-<input
-    id="data"
-    type="date"
-    required
->
-
-</div>
-
-
-<div>
-
-<label for="hora">
-Horário
-</label>
-
-<input
-    id="hora"
-    type="time"
-    required
->
-
-</div>
-
-
-<div>
-
-<label for="tipo">
-Tipo de evento
-</label>
-
-<select
-    id="tipo"
-    required
->
-
-<option value="">
-Selecione
-</option>
-
-<option>
-Aniversário
-</option>
-
-<option>
-Casamento
-</option>
-
-<option>
-Evento empresarial
-</option>
-
-<option>
-Festa particular
-</option>
-
-<option>
-Bar / Restaurante
-</option>
-
-<option>
-Confraternização
-</option>
-
-<option>
-Evento cultural
-</option>
-
-<option>
-Outro
-</option>
-
-</select>
-
-</div>
-
-
-<div>
-
-<label for="formacao">
-Formação desejada
-</label>
-
-<select
-    id="formacao"
-    required
->
-
-<option value="">
-Selecione
-</option>
-
-<option>
-Samba Trio
-</option>
-
-<option>
-Samba 4 Integrantes
-</option>
-
-<option>
-Banda Completa
-</option>
-
-</select>
-
-</div>
-
-
-</div>
-
-
-
-<!-- ENDEREÇO -->
-
-<h3>
-📍 Endereço completo do evento
-</h3>
-
-
-<label for="enderecoEvento">
-
-Buscar endereço
-
-</label>
-
-
-<input
-    id="enderecoEvento"
-    type="text"
-    placeholder="Digite rua, número, bairro ou local"
-    autocomplete="off"
-    required
->
-
-
-<p class="note">
-
-Digite o endereço. A integração com o Google Maps
-poderá apresentar sugestões automaticamente.
-
-</p>
-
-
-<div class="address-box">
-
-
-<div class="form-grid">
-
-
-<div>
-
-<label for="rua">
-Rua
-</label>
-
-<input
-    id="rua"
-    type="text"
->
-
-</div>
-
-
-<div>
-
-<label for="numero">
-Número
-</label>
-
-<input
-    id="numero"
-    type="text"
-    required
->
-
-</div>
-
-
-<div>
-
-<label for="bairro">
-Bairro
-</label>
-
-<input
-    id="bairro"
-    type="text"
->
-
-</div>
-
-
-<div>
-
-<label for="cep">
-CEP
-</label>
-
-<input
-    id="cep"
-    type="text"
->
-
-</div>
-
-
-<div>
-
-<label for="cidade">
-Cidade
-</label>
-
-<input
-    id="cidade"
-    type="text"
-    required
->
-
-</div>
-
-
-<div>
-
-<label for="estado">
-Estado
-</label>
-
-<input
-    id="estado"
-    type="text"
->
-
-</div>
-
-
-</div>
-
-</div>
-
-
-
-<!-- NOTA -->
-
-<h3>
-🧾 Nota Fiscal
-</h3>
-
-
-<select
-    id="notaFiscal"
-    required
->
-
-<option value="">
-Selecione
-</option>
-
-<option>
-Sim
-</option>
-
-<option>
-Não
-</option>
-
-<option>
-Não sei
-</option>
-
-</select>
-
-
-
-<!-- CAMISA -->
-
-<h3>
-👕 Cor da camisa
-</h3>
-
-
-<select id="camisa">
-
-<option>
-Preta
-</option>
-
-<option>
-Branca
-</option>
-
-<option>
-Outra
-</option>
-
-</select>
-
-
-
-<!-- OBSERVAÇÃO -->
-
-<label for="observacoes">
-
-📝 Observações
-
-</label>
-
-
-<textarea
-    id="observacoes"
-    placeholder="Alguma informação importante sobre o evento?"
-></textarea>
-
-
-
-<button
-    class="primary"
-    type="submit"
->
-📲 ENVIAR SOLICITAÇÃO
-</button>
-
-
-<div id="clienteMsg"></div>
-
-
-</form>
-
-
-</div>
-
-</div>
-
-
-
-<!-- ========================= -->
+<!-- ============================= -->
 <!-- PERFIL -->
-<!-- ========================= -->
+<!-- ============================= -->
 
-<div
-    class="modal"
-    id="modalPerfil"
->
+<div class="modal" id="modalPerfil">
 
+    <div class="modal-box">
 
-<div class="modal-box">
+        <button class="close" id="fecharPerfil">×</button>
 
+        <h2>🎶 AdaSamba</h2>
 
-<button
-    class="close"
-    type="button"
-    onclick="fecharPerfil()"
->
-×
-</button>
+        <p style="margin-top:15px;line-height:1.7">
 
+            Samba, Pagode e MPB ao vivo para
+            aniversários, festas, bares,
+            restaurantes, eventos empresariais,
+            eventos culturais e confraternizações.
 
-<h2>
-🎶 AdaSamba
-</h2>
+        </p>
 
-
-<p
-    style="
-    line-height:1.7;
-    margin-top:15px;
-    "
->
-
-Samba, Pagode e MPB ao vivo para
-aniversários, festas, bares,
-restaurantes, eventos empresariais,
-eventos culturais e confraternizações.
-
-</p>
-
-
-</div>
+    </div>
 
 </div>
 
 
+<!-- ============================= -->
+<!-- CLIENTE -->
+<!-- ============================= -->
 
-<!-- ========================= -->
+<div class="modal" id="modalCliente">
+
+    <div class="modal-box">
+
+        <button class="close" id="fecharCliente">×</button>
+
+        <h2>🎶 Solicitação de Orçamento</h2>
+
+        <p class="info">
+            Preencha os dados do evento.
+            Os valores de cachê e transporte
+            não aparecem para o cliente.
+        </p>
+
+        <form id="formCliente">
+
+            <h3>👤 Dados do cliente</h3>
+
+            <div class="grid">
+
+                <div>
+                    <label>Nome</label>
+                    <input id="clienteNome" required>
+                </div>
+
+                <div>
+                    <label>WhatsApp</label>
+                    <input
+                        id="clienteWhatsApp"
+                        type="tel"
+                        placeholder="(00) 00000-0000"
+                        required
+                    >
+                </div>
+
+            </div>
+
+
+            <h3>📅 Dados do evento</h3>
+
+            <div class="grid">
+
+                <div>
+                    <label>Data</label>
+                    <input id="eventoData" type="date" required>
+                </div>
+
+                <div>
+                    <label>Horário</label>
+                    <input id="eventoHora" type="time" required>
+                </div>
+
+                <div>
+                    <label>Tipo de evento</label>
+
+                    <select id="tipoEvento" required>
+
+                        <option value="">
+                            Selecione
+                        </option>
+
+                        <option>Aniversário</option>
+                        <option>Casamento</option>
+                        <option>Evento empresarial</option>
+                        <option>Festa particular</option>
+                        <option>Bar / Restaurante</option>
+                        <option>Confraternização</option>
+                        <option>Evento cultural</option>
+                        <option>Outro</option>
+
+                    </select>
+
+                </div>
+
+                <div>
+
+                    <label>Formação desejada</label>
+
+                    <select id="formacao" required>
+
+                        <option value="">
+                            Selecione
+                        </option>
+
+                        <option>Samba Trio</option>
+                        <option>Samba 4 Integrantes</option>
+                        <option>Banda Completa</option>
+
+                    </select>
+
+                </div>
+
+            </div>
+
+
+            <h3>📍 Endereço completo do evento</h3>
+
+            <label>Buscar endereço</label>
+
+            <input
+                id="buscaEndereco"
+                type="text"
+                placeholder="Digite rua, número, bairro ou local"
+            >
+
+            <p class="info">
+                A integração com o Google Maps será adicionada
+                na próxima etapa para mostrar sugestões automaticamente.
+            </p>
+
+            <div class="address">
+
+                <div class="grid">
+
+                    <div>
+                        <label>Rua</label>
+                        <input id="rua">
+                    </div>
+
+                    <div>
+                        <label>Número</label>
+                        <input id="numeroEndereco" required>
+                    </div>
+
+                    <div>
+                        <label>Bairro</label>
+                        <input id="bairro">
+                    </div>
+
+                    <div>
+                        <label>CEP</label>
+                        <input id="cep">
+                    </div>
+
+                    <div>
+                        <label>Cidade</label>
+                        <input id="cidade" required>
+                    </div>
+
+                    <div>
+                        <label>Estado</label>
+                        <input id="estado">
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <h3>🧾 Nota Fiscal</h3>
+
+            <select id="clienteNotaFiscal" required>
+
+                <option value="">
+                    Selecione
+                </option>
+
+                <option>Sim</option>
+                <option>Não</option>
+                <option>Não sei</option>
+
+            </select>
+
+
+            <h3>👕 Cor da camisa</h3>
+
+            <select id="camisa">
+
+                <option>Preta</option>
+                <option>Branca</option>
+                <option>Outra</option>
+
+            </select>
+
+
+            <label>📝 Observações</label>
+
+            <textarea
+                id="observacoes"
+                placeholder="Alguma informação importante?"
+            ></textarea>
+
+
+            <button
+                class="primary"
+                type="submit"
+            >
+                📲 ENVIAR SOLICITAÇÃO
+            </button>
+
+        </form>
+
+        <div id="clienteResultado"></div>
+
+    </div>
+
+</div>
+
+
+<!-- ============================= -->
 <!-- ÁREA INTERNA -->
-<!-- ========================= -->
+<!-- ============================= -->
 
-<div
-    class="modal"
-    id="modalInterno"
->
+<div class="modal" id="modalInterno">
 
+    <div class="modal-box internal">
 
-<div class="modal-box internal">
+        <button class="close" id="fecharInterno">×</button>
 
+        <h2>🔐 Área Interna — AdaSamba</h2>
 
-<button
-    class="close"
-    type="button"
-    onclick="fecharInterno()"
->
-×
-</button>
+        <p class="info">
+            Esta área é somente para controle interno.
+            Os custos abaixo não são enviados ao cliente.
+        </p>
 
 
-<h2>
-🔐 Área Interna — AdaSamba
-</h2>
+        <!-- ORIGEM -->
+
+        <div class="internal-card">
+
+            <h3>🏠 Origem da banda</h3>
+
+            <label>Endereço de saída</label>
+
+            <input
+                id="origemBanda"
+                placeholder="Endereço de onde a banda sai"
+            >
+
+            <p class="info">
+                Este endereço ficará somente na área interna.
+            </p>
+
+        </div>
 
 
-<p
-    class="note"
-    style="color:#bbb"
->
+        <!-- DESTINO -->
 
-Área destinada ao controle interno
-dos orçamentos.
+        <div class="internal-card">
 
-</p>
+            <h3>📍 Destino do evento</h3>
 
+            <label>Endereço do evento</label>
 
+            <input
+                id="destinoEvento"
+                placeholder="Endereço do evento"
+            >
 
-<!-- ORIGEM -->
-
-<div class="internal-card">
-
-
-<h3>
-🏠 Endereço de saída da banda
-</h3>
+        </div>
 
 
-<label for="origem">
+        <!-- TRANSPORTE -->
 
-Origem
+        <div class="internal-card">
 
-</label>
+            <h3>🚗 Transporte</h3>
+
+            <div class="grid">
+
+                <div>
+
+                    <label>Distância em km</label>
+
+                    <input
+                        id="km"
+                        type="number"
+                        min="0"
+                        step="0.1"
+                        value="0"
+                    >
+
+                </div>
+
+                <div>
+
+                    <label>Valor por km</label>
+
+                    <input
+                        id="valorPorKm"
+                        type="number"
+                        min="0"
+                        step="0.01"
+                        value="2"
+                    >
+
+                </div>
+
+            </div>
 
 
-<input
-    id="origem"
-    type="text"
-    placeholder="Endereço de onde a banda sai"
->
+            <label style="display:flex;gap:8px;align-items:center">
+
+                <input
+                    id="idaVolta"
+                    type="checkbox"
+                    checked
+                    style="width:auto"
+                >
+
+                Considerar ida e volta
+
+            </label>
+
+        </div>
 
 
-<p
-    class="note"
-    style="color:#bbb"
->
+        <!-- EXTRAS -->
 
-Este endereço não será mostrado
-ao cliente.
+        <div class="internal-card">
 
-</p>
+            <h3>💰 Custos adicionais</h3>
 
+            <div class="grid">
+
+                <div>
+
+                    <label>🛣️ Pedágio</label>
+
+                    <input
+                        id="pedagio"
+                        type="number"
+                        min="0"
+                        step="0.01"
+                        value="0"
+                    >
+
+                </div>
+
+                <div>
+
+                    <label>🅿️ Estacionamento</label>
+
+                    <input
+                        id="estacionamento"
+                        type="number"
+                        min="0"
+                        step="0.01"
+                        value="0"
+                    >
+
+                </div>
+
+                <div>
+
+                    <label>🍽️ Alimentação</label>
+
+                    <input
+                        id="alimentacao"
+                        type="number"
+                        min="0"
+                        step="0.01"
+                        value="0"
+                    >
+
+                </div>
+
+                <div>
+
+                    <label>🏨 Hospedagem</label>
+
+                    <input
+                        id="hospedagem"
+                        type="number"
+                        min="0"
+                        step="0.01"
+                        value="0"
+                    >
+
+                </div>
+
+                <div class="full">
+
+                    <label>➕ Outros custos</label>
+
+                    <input
+                        id="outros"
+                        type="number"
+                        min="0"
+                        step="0.01"
+                        value="0"
+                    >
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- MÚSICOS -->
+
+        <div class="internal-card">
+
+            <h3>🎵 Cachês dos músicos</h3>
+
+            <div class="grid">
+
+                <div>
+                    <label>Músico 1</label>
+                    <input class="musico" type="number" value="0">
+                </div>
+
+                <div>
+                    <label>Músico 2</label>
+                    <input class="musico" type="number" value="0">
+                </div>
+
+                <div>
+                    <label>Músico 3</label>
+                    <input class="musico" type="number" value="0">
+                </div>
+
+                <div>
+                    <label>Músico 4</label>
+                    <input class="musico" type="number" value="0">
+                </div>
+
+                <div>
+                    <label>Músico 5</label>
+                    <input class="musico" type="number" value="0">
+                </div>
+
+                <div>
+                    <label>Músico 6</label>
+                    <input class="musico" type="number" value="0">
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- APRESENTAÇÃO -->
+
+        <div class="internal-card">
+
+            <h3>🎤 Apresentação</h3>
+
+            <label>Valor da apresentação</label>
+
+            <input
+                id="valorApresentacao"
+                type="number"
+                min="0"
+                step="0.01"
+                value="0"
+            >
+
+        </div>
+
+
+        <!-- NOTA -->
+
+        <div class="internal-card">
+
+            <h3>🧾 Nota Fiscal</h3>
+
+            <label>Percentual da Nota Fiscal (%)</label>
+
+            <input
+                id="percentualNF"
+                type="number"
+                min="0"
+                step="0.01"
+                value="0"
+                placeholder="Ex.: 6"
+            >
+
+            <p class="info">
+                O cálculo será feito sobre o valor da apresentação.
+            </p>
+
+        </div>
+
+
+        <!-- VALOR FINAL -->
+
+        <div class="internal-card">
+
+            <h3>💵 Valor que quero apresentar ao cliente</h3>
+
+            <input
+                id="valorFinal"
+                type="number"
+                min="0"
+                step="0.01"
+                value="0"
+                placeholder="Digite o valor final"
+            >
+
+        </div>
+
+
+        <button
+            class="primary"
+            id="calcular"
+            type="button"
+        >
+            🚗 CALCULAR TRANSPORTE E CUSTOS
+        </button>
+
+
+        <div
+            class="result"
+            id="resultadoCalculo"
+        >
+            Aguardando cálculo.
+        </div>
+
+
+        <button
+            class="primary"
+            id="gerarWhatsApp"
+            type="button"
+        >
+            📲 GERAR PROPOSTA PARA WHATSAPP
+        </button>
+
+    </div>
 
 </div>
-
-
-
-<!-- DESTINO -->
-
-<div class="internal-card">
-
-
-<h3>
-📍 Destino do evento
-</h3>
-
-
-<label for="destinoInterno">
-
-Destino
-
-</label>
-
-
-<input
-    id="destinoInterno"
-    type="text"
-    placeholder="Endereço do evento"
->
-
-
-</div>
-
-
-
-<!-- TRANSPORTE -->
-
-<div class="internal-card">
-
-
-<h3>
-🚗 Transporte
-</h3>
-
-
-<div class="form-grid">
-
-
-<div>
-
-<label for="kmManual">
-Distância — km
-</label>
-
-<input
-    id="kmManual"
-    type="number"
-    min="0"
-    step="0.1"
-    value="0"
->
-
-</div>
-
-
-<div>
-
-<label for="valorKm">
-Valor por km
-</label>
-
-<input
-    id="valorKm"
-    type="number"
-    min="0"
-    step="0.01"
-    value="2.00"
->
-
-</div>
-
-
-</div>
-
-
-<label
-    style="
-    display:flex;
-    align-items:center;
-    gap:8px;
-    "
->
-
-
-<input
-    id="idaVolta"
-    type="checkbox"
-    checked
-    style="width:auto"
->
-
-
-Considerar ida e volta
-
-
-</label>
-
-
-<p
-    class="note"
-    style="color:#bbb"
->
-
-A distância poderá ser preenchida
-automaticamente pelo Google Maps
-quando a integração for ativada.
-
-</p>
-
-
-</div>
-
-
-
-<!-- CUSTOS EXTRAS -->
-
-<div class="internal-card">
-
-
-<h3>
-💰 Custos adicionais
-</h3>
-
-
-<div class="form-grid">
-
-
-<div>
-
-<label for="pedagio">
-🛣️ Pedágio
-</label>
-
-<input
-    id="pedagio"
-    type="number"
-    min="0"
-    step="0.01"
-    value="0"
->
-
-</div>
-
-
-<div>
-
-<label for="estacionamento">
-🅿️ Estacionamento
-</label>
-
-<input
-    id="estacionamento"
-    type="number"
-    min="0"
-    step="0.01"
-    value="0"
->
-
-</div>
-
-
-<div>
-
-<label for="alimentacao">
-🍽️ Alimentação
-</label>
-
-<input
-    id="alimentacao"
-    type="number"
-    min="0"
-    step="0.01"
-    value="0"
->
-
-</div>
-
-
-<div>
-
-<label for="hospedagem">
-🏨 Hospedagem
-</label>
-
-<input
-    id="hospedagem"
-    type="number"
-    min="0"
-    step="0.01"
-    value="0"
->
-
-</div>
-
-
-<div class="full">
-
-<label for="outros">
-➕ Outros custos
-</label>
-
-<input
-    id="outros"
-    type="number"
-    min="0"
-    step="0.01"
-    value="0"
->
-
-</div>
-
-
-</div>
-
-
-</div>
-
-
-
-<!-- MÚSICOS -->
-
-<div class="internal-card">
-
-
-<h3>
-🎵 Cachês dos músicos
-</h3>
-
-
-<div class="form-grid">
-
-
-<div>
-
-<label>
-Músico 1
-</label>
-
-<input
-    class="musico"
-    type="number"
-    min="0"
-    step="0.01"
-    value="0"
->
-
-</div>
-
-
-<div>
-
-<label>
-Músico 2
-</label>
-
-<input
-    class="musico"
-    type="number"
-    min="0"
-    step="0.01"
-    value="0"
->
-
-</div>
-
-
-<div>
-
-<label>
-Músico 3
-</label>
-
-<input
-    class="musico"
-    type="number"
-    min="0"
-    step="0.01"
-    value="0"
->
-
-</div>
-
-
-<div>
-
-<label>
-Músico 4
-</label>
-
-<input
-    class="musico"
-    type="number"
-    min="0"
-    step="0.01"
-    value="0"
->
-
-</div>
-
-
-<div>
-
-<label>
-Músico 5
-</label>
-
-<input
-    class="musico"
-    type="number"
-    min="0"
-    step="0.01"
-    value="0"
->
-
-</div>
-
-
-<div>
-
-<label>
-Músico 6
-</label>
-
-<input
-    class="musico"
-    type="number"
-    min="0"
-    step="0.01"
-    value="0"
->
-
-</div>
-
-
-</div>
-
-
-</div>
-
-
-
-<!-- APRESENTAÇÃO -->
-
-<div class="internal-card">
-
-
-<h3>
-🎤 Apresentação
-</h3>
-
-
-<label for="cache">
-
-Valor da apresentação
-
-</label>
-
-
-<input
-    id="cache"
-    type="number"
-    min="0"
-    step="0.01"
-    value="0"
->
-
-
-</div>
-
-
-
-<!-- NOTA FISCAL -->
-
-<div class="internal-card">
-
-
-<h3>
-🧾 Nota Fiscal
-</h3>
-
-
-<label for="nfPercent">
-
-Percentual da Nota Fiscal
-
-</label>
-
-
-<input
-    id="nfPercent"
-    type="number"
-    min="0"
-    step="0.01"
-    value="0"
-    placeholder="Ex.: 6"
->
-
-
-<p
-    class="note"
-    style="color:#bbb"
->
-
-O percentual será calculado
-sobre o valor da apresentação.
-
-</p>
-
-
-</div>
-
-
-
-<!-- VALOR FINAL -->
-
-<div class="internal-card">
-
-
-<h3>
-💵 Valor que quero apresentar ao cliente
-</h3>
-
-
-<input
-    id="valorVenda"
-    type="number"
-    min="0"
-    step="0.01"
-    value="0"
-    placeholder="Digite o valor final"
->
-
-
-<p
-    class="note"
-    style="color:#bbb"
->
-
-Este é o valor que será apresentado
-ao cliente. Seus custos internos
-não serão mostrados.
-
-</p>
-
-
-</div>
-
-
-
-<!-- CALCULAR -->
-
-<div class="internal-card">
-
-
-<button
-    class="primary"
-    id="calcularBtn"
-    type="button"
->
-🚗 CALCULAR TRANSPORTE E CUSTOS
-</button>
-
-
-<div
-    id="resultadoInterno"
-    class="result"
->
-
-Aguardando cálculo.
-
-</div>
-
-
-</div>
-
-
-
-<!-- RESULTADO -->
-
-<div class="internal-card">
-
-
-<h3>
-📊 Resultado financeiro
-</h3>
-
-
-<div
-    id="resumoFinanceiro"
-    class="result"
->
-
-Preencha os valores
-e clique em calcular.
-
-</div>
-
-
-<button
-    class="primary"
-    type="button"
-    onclick="gerarProposta()"
->
-
-📲 GERAR PROPOSTA PARA WHATSAPP
-
-</button>
-
-
-</div>
-
-
-</div>
-
-</div>
-
 
 
 <script>
 
+/* ==================================================
+   ADA SAMBA — JAVASCRIPT
+   ================================================== */
 
-/* ========================= */
-/* MODAIS */
-/* ========================= */
+document.addEventListener("DOMContentLoaded", function(){
 
+    /* -------------------------
+       ELEMENTOS
+       ------------------------- */
 
-function perfil(){
+    const modalPerfil =
+        document.getElementById("modalPerfil");
 
-    document
-    .getElementById("modalPerfil")
-    .style.display="block";
+    const modalCliente =
+        document.getElementById("modalCliente");
 
-}
-
-
-function fecharPerfil(){
-
-    document
-    .getElementById("modalPerfil")
-    .style.display="none";
-
-}
+    const modalInterno =
+        document.getElementById("modalInterno");
 
 
-function contratar(){
+    /* -------------------------
+       BOTÕES PRINCIPAIS
+       ------------------------- */
 
     document
-    .getElementById("modal")
-    .style.display="block";
+    .getElementById("btnPerfil")
+    .addEventListener("click", function(){
 
-}
+        modalPerfil.style.display = "block";
 
-
-function fechar(){
-
-    document
-    .getElementById("modal")
-    .style.display="none";
-
-}
-
-
-function abrirInterno(){
-
-    document
-    .getElementById("modalInterno")
-    .style.display="block";
-
-}
-
-
-function fecharInterno(){
-
-    document
-    .getElementById("modalInterno")
-    .style.display="none";
-
-}
-
-
-
-/* ========================= */
-/* FECHAR MODAL */
-/* ========================= */
-
-
-window.addEventListener(
-    "click",
-    function(event){
-
-        if(
-            event.target ===
-            document.getElementById("modal")
-        ){
-
-            fechar();
-
-        }
-
-
-        if(
-            event.target ===
-            document.getElementById("modalPerfil")
-        ){
-
-            fecharPerfil();
-
-        }
-
-
-        if(
-            event.target ===
-            document.getElementById("modalInterno")
-        ){
-
-            fecharInterno();
-
-        }
-
-    }
-);
-
-
-
-/* ========================= */
-/* BUSCA */
-/* ========================= */
-
-
-document
-.getElementById("search")
-.addEventListener(
-    "input",
-    filtrar
-);
-
-
-function filtrar(){
-
-    const busca =
-        document
-        .getElementById("search")
-        .value
-        .toLowerCase()
-        .trim();
+    });
 
 
     document
-    .querySelectorAll(".artista")
-    .forEach(
-        function(card){
+    .getElementById("btnContratar")
+    .addEventListener("click", function(){
 
-            const texto =
-                card.innerText
-                .toLowerCase();
+        modalCliente.style.display = "block";
 
+    });
 
-            if(
-                texto.includes(busca)
-            ){
-
-                card.style.display="block";
-
-            }
-
-            else{
-
-                card.style.display="none";
-
-            }
-
-        }
-    );
-
-}
-
-
-
-/* ========================= */
-/* CATEGORIAS */
-/* ========================= */
-
-
-function categoria(cat){
 
     document
-    .querySelectorAll(".artista")
-    .forEach(
-        function(card){
+    .getElementById("btnInterno")
+    .addEventListener("click", function(){
 
-            if(
-                cat==="Todos"
-            ){
-
-                card.style.display="block";
-
-                return;
-
-            }
-
-
-            const categorias =
-                card.dataset.categoria;
-
-
-            if(
-                categorias.includes(cat)
-            ){
-
-                card.style.display="block";
-
-            }
-
-            else{
-
-                card.style.display="none";
-
-            }
-
-        }
-    );
-
-}
-
-
-
-/* ========================= */
-/* DINHEIRO */
-/* ========================= */
-
-
-function dinheiro(valor){
-
-    return new Intl.NumberFormat(
-        "pt-BR",
-        {
-            style:"currency",
-            currency:"BRL"
-        }
-    )
-    .format(
-        Number(valor)||0
-    );
-
-}
-
-
-
-/* ========================= */
-/* NÚMERO */
-/* ========================= */
-
-
-function numero(id){
-
-    const valor =
-        Number(
-            document
-            .getElementById(id)
-            .value
-        );
-
-
-    if(
-        !Number.isFinite(valor)
-        ||
-        valor<0
-    ){
-
-        return 0;
-
-    }
-
-
-    return valor;
-
-}
-
-
-
-/* ========================= */
-/* FORMULÁRIO DO CLIENTE */
-/* ========================= */
-
-
-document
-.getElementById("formCliente")
-.addEventListener(
-    "submit",
-    function(event){
-
-        event.preventDefault();
-
-
-        const nome =
-            document
-            .getElementById("nome")
-            .value
-            .trim();
-
-
-        const whatsapp =
-            document
-            .getElementById("whatsapp")
-            .value
-            .trim();
-
-
-        const data =
-            document
-            .getElementById("data")
-            .value;
-
-
-        const hora =
-            document
-            .getElementById("hora")
-            .value;
-
-
-        const tipo =
-            document
-            .getElementById("tipo")
-            .value;
-
-
-        const formacao =
-            document
-            .getElementById("formacao")
-            .value;
-
-
-        const rua =
-            document
-            .getElementById("rua")
-            .value
-            .trim();
-
-
-        const numeroEndereco =
-            document
-            .getElementById("numero")
-            .value
-            .trim();
-
-
-        const bairro =
-            document
-            .getElementById("bairro")
-            .value
-            .trim();
-
-
-        const cep =
-            document
-            .getElementById("cep")
-            .value
-            .trim();
-
-
-        const cidade =
-            document
-            .getElementById("cidade")
-            .value
-            .trim();
-
-
-        const estado =
-            document
-            .getElementById("estado")
-            .value
-            .trim();
-
-
-        const notaFiscal =
-            document
-            .getElementById("notaFiscal")
-            .value;
-
-
-        const camisa =
-            document
-            .getElementById("camisa")
-            .value;
-
-
-        const observacoes =
-            document
-            .getElementById("observacoes")
-            .value
-            .trim();
-
-
-        const endereco =
-
-            [
-                rua,
-                numeroEndereco,
-                bairro,
-                cidade,
-                estado,
-                cep
-            ]
-            .filter(Boolean)
-            .join(", ");
-
-
-        const mensagem =
-
-`Olá! Gostaria de solicitar um orçamento.
-
-🎤 Artista: AdaSamba
-
-👤 Nome: ${nome}
-
-📱 WhatsApp: ${whatsapp}
-
-📅 Data: ${data}
-
-⏰ Horário: ${hora}
-
-📍 Endereço do evento:
-${endereco}
-
-🎉 Evento:
-${tipo}
-
-🎶 Formação:
-${formacao}
-
-🧾 Nota Fiscal:
-${notaFiscal}
-
-👕 Cor da camisa:
-${camisa}
-
-📝 Observações:
-${observacoes || "Nenhuma"}`;
-
-
-        const link =
-
-            "https://wa.me/?text=" +
-            encodeURIComponent(mensagem);
-
-
-        document
-        .getElementById("clienteMsg")
-        .innerHTML =
-
-`
-<div class="success">
-
-Solicitação preparada.
-
-</div>
-
-<a
-    class="primary"
-    style="
-    display:block;
-    text-align:center;
-    text-decoration:none;
-    "
-    target="_blank"
-    href="${link}"
->
-
-📲 ENVIAR PELO WHATSAPP
-
-</a>
-`;
-
-    }
-);
-
-
-
-/* ========================= */
-/* CÁLCULO */
-/* ========================= */
-
-
-document
-.getElementById("calcularBtn")
-.addEventListener(
-    "click",
-    calcular
-);
-
-
-function calcular(){
-
-
-    /* DISTÂNCIA */
-
-    const kmIda =
-        numero("kmManual");
-
-
-    const idaVolta =
-        document
-        .getElementById("idaVolta")
-        .checked;
-
-
-    let kmTotal =
-        kmIda;
-
-
-    if(
-        idaVolta
-    ){
-
-        kmTotal =
-            kmIda * 2;
-
-    }
-
-
-
-    /* TRANSPORTE */
-
-    const valorKm =
-        numero("valorKm");
-
-
-    const transporte =
-        kmTotal * valorKm;
-
-
-
-    /* EXTRAS */
-
-    const pedagio =
-        numero("pedagio");
-
-
-    const estacionamento =
-        numero("estacionamento");
-
-
-    const alimentacao =
-        numero("alimentacao");
-
-
-    const hospedagem =
-        numero("hospedagem");
-
-
-    const outros =
-        numero("outros");
-
-
-    const extras =
-
-        pedagio +
-        estacionamento +
-        alimentacao +
-        hospedagem +
-        outros;
-
-
-
-    /* MÚSICOS */
-
-    const musicos =
-
-        Array
-        .from(
-            document
-            .querySelectorAll(".musico")
-        )
-        .reduce(
-            function(total,input){
-
-                return total +
-                (
-                    Number(input.value)||0
-                );
-
-            },
-            0
-        );
-
-
-
-    /* APRESENTAÇÃO */
-
-    const cache =
-        numero("cache");
-
-
-
-    /* NOTA FISCAL */
-
-    const nfPercent =
-        numero("nfPercent");
-
-
-    const valorNF =
-
-        cache *
-        (
-            nfPercent /
-            100
-        );
-
-
-
-    /* CUSTO TOTAL */
-
-    const custoTotal =
-
-        transporte +
-        extras +
-        musicos +
-        valorNF;
-
-
-
-    /* VALOR DE VENDA */
-
-    const valorVenda =
-        numero("valorVenda");
-
-
-    /* RESULTADO */
-
-    const resultado =
-
-        valorVenda -
-        custoTotal;
-
-
-
-    /* RESULTADO TRANSPORTE */
-
-    document
-    .getElementById(
-        "resultadoInterno"
-    )
-    .innerHTML =
-
-`
-<strong>
-Distância considerada:
-</strong>
-
-${kmTotal.toFixed(1)} km
-
-<br>
-
-<strong>
-Transporte:
-</strong>
-
-${dinheiro(transporte)}
-
-<br>
-
-<strong>
-Pedágio:
-</strong>
-
-${dinheiro(pedagio)}
-
-<br>
-
-<strong>
-Estacionamento:
-</strong>
-
-${dinheiro(estacionamento)}
-
-<br>
-
-<strong>
-Alimentação:
-</strong>
-
-${dinheiro(alimentacao)}
-
-<br>
-
-<strong>
-Hospedagem:
-</strong>
-
-${dinheiro(hospedagem)}
-
-<br>
-
-<strong>
-Outros custos:
-</strong>
-
-${dinheiro(outros)}
-
-`;
-
-
-
-    /* RESUMO */
-
-    document
-    .getElementById(
-        "resumoFinanceiro"
-    )
-    .innerHTML =
-
-`
-<strong>
-🎤 Valor da apresentação:
-</strong>
-
-${dinheiro(cache)}
-
-<br>
-
-<strong>
-🎵 Cachês dos músicos:
-</strong>
-
-${dinheiro(musicos)}
-
-<br>
-
-<strong>
-🧾 Nota Fiscal (${nfPercent}%):
-</strong>
-
-${dinheiro(valorNF)}
-
-<br>
-
-<strong>
-🚗 Transporte:
-</strong>
-
-${dinheiro(transporte)}
-
-<br>
-
-<strong>
-➕ Outros custos:
-</strong>
-
-${dinheiro(extras)}
-
-<hr>
-
-<strong>
-CUSTO TOTAL:
-</strong>
-
-${dinheiro(custoTotal)}
-
-<br><br>
-
-<strong>
-💵 VALOR FINAL AO CLIENTE:
-</strong>
-
-${dinheiro(valorVenda)}
-
-<br><br>
-
-<strong>
-📈 RESULTADO:
-</strong>
-
-<span class="money">
-
-${dinheiro(resultado)}
-
-</span>
-
-`;
-
-}
-
-
-
-/* ========================= */
-/* GERAR PROPOSTA */
-/* ========================= */
-
-
-function gerarProposta(){
-
-
-    const nome =
-        document
-        .getElementById("nome")
-        .value
-        .trim();
-
-
-    const data =
-        document
-        .getElementById("data")
-        .value;
-
-
-    const hora =
-        document
-        .getElementById("hora")
-        .value;
-
-
-    const formacao =
-        document
-        .getElementById("formacao")
-        .value;
-
-
-    const valorVenda =
-        numero("valorVenda");
-
-
-    if(
-        valorVenda<=0
-    ){
-
-        alert(
-            "Informe o valor final da proposta."
-        );
-
-        return;
-
-    }
-
-
-    const texto =
-
-`Olá, ${nome || "tudo bem"}! 😊
-
-Temos prazer em apresentar a proposta do AdaSamba para o seu evento. 🎶
-
-🎤 Formação:
-${formacao || "A combinar"}
-
-📅 Data:
-${data || "A combinar"}
-
-⏰ Horário:
-${hora || "A combinar"}
-
-💰 Investimento:
-${dinheiro(valorVenda)}
-
-Caso esteja de acordo, podemos avançar com os detalhes da contratação.
-
-🎶 AdaSamba
-Samba, Pagode e MPB para o seu evento.`;
-
-
-    const url =
-
-        "https://wa.me/?text=" +
-        encodeURIComponent(texto);
-
-
-    window.open(
-        url,
-        "_blank"
-    );
-
-}
-
-
-
-/*
-====================================================
-GOOGLE MAPS
-====================================================
-
-A estrutura está preparada para a integração.
-
-Quando a Google Maps Platform for configurada,
-o sistema poderá:
-
-• sugerir endereços;
-• preencher rua;
-• preencher bairro;
-• preencher CEP;
-• preencher cidade;
-• obter coordenadas;
-• calcular a rota;
-• calcular a distância;
-• calcular o transporte.
-
-Por enquanto, o campo "Distância — km" na área
-interna permite informar a distância manualmente.
-
-NÃO coloque uma chave de API aqui sem configurar
-corretamente as restrições da chave.
-
-====================================================
-*/
-
-
-</script>
-
-
-</body>
-</html>
+   
