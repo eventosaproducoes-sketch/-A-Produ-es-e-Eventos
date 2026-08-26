@@ -141,27 +141,18 @@ header p{
     margin-top:16px;
 }
 
-.secondary{
-    border:0;
-    background:#eee;
-    padding:12px;
-    border-radius:10px;
-    font-weight:bold;
-    cursor:pointer;
-}
-
 .modal{
     display:none;
     position:fixed;
     inset:0;
-    background:rgba(0,0,0,.72);
+    background:rgba(0,0,0,.75);
     z-index:1000;
     overflow:auto;
     padding:15px;
 }
 
 .modal-box{
-    max-width:750px;
+    max-width:760px;
     margin:20px auto;
     background:#fff;
     border-radius:18px;
@@ -245,14 +236,15 @@ textarea{
 }
 
 .internal-card{
-    background:#1e1e1e;
+    background:#1f1f1f;
     padding:18px;
     border-radius:14px;
     margin-top:15px;
 }
 
 .internal-card input,
-.internal-card select{
+.internal-card select,
+.internal-card textarea{
     background:#fff;
     color:#111;
 }
@@ -272,9 +264,19 @@ textarea{
 }
 
 hr{
-    margin:12px 0;
+    margin:14px 0;
     border:0;
     border-top:1px solid #ddd;
+}
+
+.status{
+    display:inline-block;
+    padding:7px 10px;
+    border-radius:20px;
+    background:#eee;
+    color:#111;
+    font-size:12px;
+    font-weight:bold;
 }
 
 @media(max-width:600px){
@@ -303,9 +305,16 @@ hr{
 
 <body>
 
+
+<!-- ========================= -->
+<!-- CABEÇALHO -->
+<!-- ========================= -->
+
 <header>
 
-<h1>AdaSamba & Eventos</h1>
+<h1>
+AdaSamba & Eventos
+</h1>
 
 <p>
 Samba, Pagode e MPB para o seu evento
@@ -313,6 +322,11 @@ Samba, Pagode e MPB para o seu evento
 
 </header>
 
+
+
+<!-- ========================= -->
+<!-- PÁGINA PRINCIPAL -->
+<!-- ========================= -->
 
 <main class="container">
 
@@ -357,6 +371,8 @@ Banda
 
 <div id="catalogo">
 
+
+<!-- ADASAMBA -->
 
 <div
     class="card artista"
@@ -438,7 +454,6 @@ CONTRATAR
 <!-- MODAL DO CLIENTE -->
 <!-- ========================= -->
 
-
 <div
     class="modal"
     id="modal"
@@ -464,19 +479,19 @@ CONTRATAR
 
 <p class="note">
 
-Preencha os dados do evento.
-Os valores de cachê e transporte
-não serão exibidos nesta etapa.
+Preencha as informações do evento.
+Os valores internos não serão exibidos.
 
 </p>
-
 
 
 <form id="formCliente">
 
 
+<!-- DADOS DO CLIENTE -->
+
 <h3>
-👤 Seus dados
+👤 Dados do cliente
 </h3>
 
 
@@ -517,6 +532,8 @@ WhatsApp
 </div>
 
 
+
+<!-- EVENTO -->
 
 <h3>
 📅 Dados do evento
@@ -562,7 +579,10 @@ Horário
 Tipo de evento
 </label>
 
-<select id="tipo" required>
+<select
+    id="tipo"
+    required
+>
 
 <option value="">
 Selecione
@@ -611,7 +631,10 @@ Outro
 Formação desejada
 </label>
 
-<select id="formacao" required>
+<select
+    id="formacao"
+    required
+>
 
 <option value="">
 Selecione
@@ -640,7 +663,6 @@ Banda Completa
 
 <!-- ENDEREÇO -->
 
-
 <h3>
 📍 Endereço completo do evento
 </h3>
@@ -664,9 +686,8 @@ Buscar endereço
 
 <p class="note">
 
-Quando o Google Maps estiver conectado,
-o cliente poderá selecionar uma sugestão
-de endereço.
+Digite o endereço. A integração com o Google Maps
+poderá apresentar sugestões automaticamente.
 
 </p>
 
@@ -769,6 +790,8 @@ Estado
 
 
 
+<!-- NOTA -->
+
 <h3>
 🧾 Nota Fiscal
 </h3>
@@ -799,6 +822,8 @@ Não sei
 
 
 
+<!-- CAMISA -->
+
 <h3>
 👕 Cor da camisa
 </h3>
@@ -822,6 +847,8 @@ Outra
 
 
 
+<!-- OBSERVAÇÃO -->
+
 <label for="observacoes">
 
 📝 Observações
@@ -831,7 +858,7 @@ Outra
 
 <textarea
     id="observacoes"
-    placeholder="Alguma informação importante?"
+    placeholder="Alguma informação importante sobre o evento?"
 ></textarea>
 
 
@@ -857,9 +884,8 @@ Outra
 
 
 <!-- ========================= -->
-<!-- MODAL PERFIL -->
+<!-- PERFIL -->
 <!-- ========================= -->
-
 
 <div
     class="modal"
@@ -891,10 +917,9 @@ Outra
     "
 >
 
-Samba, Pagode e MPB ao vivo
-para aniversários, festas,
-bares, restaurantes,
-eventos empresariais,
+Samba, Pagode e MPB ao vivo para
+aniversários, festas, bares,
+restaurantes, eventos empresariais,
 eventos culturais e confraternizações.
 
 </p>
@@ -909,7 +934,6 @@ eventos culturais e confraternizações.
 <!-- ========================= -->
 <!-- ÁREA INTERNA -->
 <!-- ========================= -->
-
 
 <div
     class="modal"
@@ -939,18 +963,14 @@ eventos culturais e confraternizações.
     style="color:#bbb"
 >
 
-Esta área é somente para
-controle interno.
-
-Os valores não serão
-exibidos ao cliente.
+Área destinada ao controle interno
+dos orçamentos.
 
 </p>
 
 
 
-<!-- ENDEREÇO DE SAÍDA -->
-
+<!-- ORIGEM -->
 
 <div class="internal-card">
 
@@ -962,7 +982,7 @@ exibidos ao cliente.
 
 <label for="origem">
 
-Endereço de saída
+Origem
 
 </label>
 
@@ -970,7 +990,7 @@ Endereço de saída
 <input
     id="origem"
     type="text"
-    placeholder="Digite o endereço de saída da banda"
+    placeholder="Endereço de onde a banda sai"
 >
 
 
@@ -979,9 +999,8 @@ Endereço de saída
     style="color:#bbb"
 >
 
-Este endereço será utilizado
-como origem para o cálculo
-da rota.
+Este endereço não será mostrado
+ao cliente.
 
 </p>
 
@@ -990,14 +1009,41 @@ da rota.
 
 
 
-<!-- TRANSPORTE -->
-
+<!-- DESTINO -->
 
 <div class="internal-card">
 
 
 <h3>
-🚗 Configuração do transporte
+📍 Destino do evento
+</h3>
+
+
+<label for="destinoInterno">
+
+Destino
+
+</label>
+
+
+<input
+    id="destinoInterno"
+    type="text"
+    placeholder="Endereço do evento"
+>
+
+
+</div>
+
+
+
+<!-- TRANSPORTE -->
+
+<div class="internal-card">
+
+
+<h3>
+🚗 Transporte
 </h3>
 
 
@@ -1006,10 +1052,25 @@ da rota.
 
 <div>
 
+<label for="kmManual">
+Distância — km
+</label>
+
+<input
+    id="kmManual"
+    type="number"
+    min="0"
+    step="0.1"
+    value="0"
+>
+
+</div>
+
+
+<div>
+
 <label for="valorKm">
-
 Valor por km
-
 </label>
 
 <input
@@ -1018,101 +1079,6 @@ Valor por km
     min="0"
     step="0.01"
     value="2.00"
->
-
-</div>
-
-
-<div>
-
-<label for="pedagio">
-
-Pedágio
-
-</label>
-
-<input
-    id="pedagio"
-    type="number"
-    min="0"
-    step="0.01"
-    value="0"
->
-
-</div>
-
-
-<div>
-
-<label for="estacionamento">
-
-Estacionamento
-
-</label>
-
-<input
-    id="estacionamento"
-    type="number"
-    min="0"
-    step="0.01"
-    value="0"
->
-
-</div>
-
-
-<div>
-
-<label for="alimentacao">
-
-Alimentação
-
-</label>
-
-<input
-    id="alimentacao"
-    type="number"
-    min="0"
-    step="0.01"
-    value="0"
->
-
-</div>
-
-
-<div>
-
-<label for="hospedagem">
-
-Hospedagem
-
-</label>
-
-<input
-    id="hospedagem"
-    type="number"
-    min="0"
-    step="0.01"
-    value="0"
->
-
-</div>
-
-
-<div>
-
-<label for="outros">
-
-Outros custos
-
-</label>
-
-<input
-    id="outros"
-    type="number"
-    min="0"
-    step="0.01"
-    value="0"
 >
 
 </div>
@@ -1144,12 +1110,128 @@ Considerar ida e volta
 </label>
 
 
+<p
+    class="note"
+    style="color:#bbb"
+>
+
+A distância poderá ser preenchida
+automaticamente pelo Google Maps
+quando a integração for ativada.
+
+</p>
+
+
 </div>
 
 
 
-<!-- CACHÊS -->
+<!-- CUSTOS EXTRAS -->
 
+<div class="internal-card">
+
+
+<h3>
+💰 Custos adicionais
+</h3>
+
+
+<div class="form-grid">
+
+
+<div>
+
+<label for="pedagio">
+🛣️ Pedágio
+</label>
+
+<input
+    id="pedagio"
+    type="number"
+    min="0"
+    step="0.01"
+    value="0"
+>
+
+</div>
+
+
+<div>
+
+<label for="estacionamento">
+🅿️ Estacionamento
+</label>
+
+<input
+    id="estacionamento"
+    type="number"
+    min="0"
+    step="0.01"
+    value="0"
+>
+
+</div>
+
+
+<div>
+
+<label for="alimentacao">
+🍽️ Alimentação
+</label>
+
+<input
+    id="alimentacao"
+    type="number"
+    min="0"
+    step="0.01"
+    value="0"
+>
+
+</div>
+
+
+<div>
+
+<label for="hospedagem">
+🏨 Hospedagem
+</label>
+
+<input
+    id="hospedagem"
+    type="number"
+    min="0"
+    step="0.01"
+    value="0"
+>
+
+</div>
+
+
+<div class="full">
+
+<label for="outros">
+➕ Outros custos
+</label>
+
+<input
+    id="outros"
+    type="number"
+    min="0"
+    step="0.01"
+    value="0"
+>
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+
+<!-- MÚSICOS -->
 
 <div class="internal-card">
 
@@ -1273,25 +1355,20 @@ Músico 6
 
 <!-- APRESENTAÇÃO -->
 
-
 <div class="internal-card">
 
 
 <h3>
-🎤 Apresentação e Nota Fiscal
+🎤 Apresentação
 </h3>
 
-
-<div class="form-grid">
-
-
-<div>
 
 <label for="cache">
 
 Valor da apresentação
 
 </label>
+
 
 <input
     id="cache"
@@ -1301,16 +1378,27 @@ Valor da apresentação
     value="0"
 >
 
+
 </div>
 
 
-<div>
+
+<!-- NOTA FISCAL -->
+
+<div class="internal-card">
+
+
+<h3>
+🧾 Nota Fiscal
+</h3>
+
 
 <label for="nfPercent">
 
-Percentual da Nota Fiscal (%)
+Percentual da Nota Fiscal
 
 </label>
+
 
 <input
     id="nfPercent"
@@ -1318,75 +1406,7 @@ Percentual da Nota Fiscal (%)
     min="0"
     step="0.01"
     value="0"
->
-
-</div>
-
-
-<div class="full">
-
-<label for="valorVenda">
-
-💵 Valor final que quero apresentar ao cliente
-
-</label>
-
-<input
-    id="valorVenda"
-    type="number"
-    min="0"
-    step="0.01"
-    value="0"
->
-
-</div>
-
-
-</div>
-
-
-</div>
-
-
-
-<!-- ROTA -->
-
-
-<div class="internal-card">
-
-
-<h3>
-📍 Rota do evento
-</h3>
-
-
-<label for="destinoInterno">
-
-Destino do evento
-
-</label>
-
-
-<input
-    id="destinoInterno"
-    type="text"
-    placeholder="Digite o endereço do evento"
->
-
-
-<label for="kmManual">
-
-Distância em km
-
-</label>
-
-
-<input
-    id="kmManual"
-    type="number"
-    min="0"
-    step="0.1"
-    value="0"
+    placeholder="Ex.: 6"
 >
 
 
@@ -1395,13 +1415,55 @@ Distância em km
     style="color:#bbb"
 >
 
-Por enquanto você pode
-informar os quilômetros
-manualmente. Na integração
-com Google Maps, essa distância
-será calculada automaticamente.
+O percentual será calculado
+sobre o valor da apresentação.
 
 </p>
+
+
+</div>
+
+
+
+<!-- VALOR FINAL -->
+
+<div class="internal-card">
+
+
+<h3>
+💵 Valor que quero apresentar ao cliente
+</h3>
+
+
+<input
+    id="valorVenda"
+    type="number"
+    min="0"
+    step="0.01"
+    value="0"
+    placeholder="Digite o valor final"
+>
+
+
+<p
+    class="note"
+    style="color:#bbb"
+>
+
+Este é o valor que será apresentado
+ao cliente. Seus custos internos
+não serão mostrados.
+
+</p>
+
+
+</div>
+
+
+
+<!-- CALCULAR -->
+
+<div class="internal-card">
 
 
 <button
@@ -1409,7 +1471,7 @@ será calculada automaticamente.
     id="calcularBtn"
     type="button"
 >
-🚗 CALCULAR TRANSPORTE
+🚗 CALCULAR TRANSPORTE E CUSTOS
 </button>
 
 
@@ -1417,7 +1479,9 @@ será calculada automaticamente.
     id="resultadoInterno"
     class="result"
 >
+
 Aguardando cálculo.
+
 </div>
 
 
@@ -1426,7 +1490,6 @@ Aguardando cálculo.
 
 
 <!-- RESULTADO -->
-
 
 <div class="internal-card">
 
@@ -1471,7 +1534,7 @@ e clique em calcular.
 
 
 /* ========================= */
-/* FUNÇÕES DOS MODAIS */
+/* MODAIS */
 /* ========================= */
 
 
@@ -1531,7 +1594,7 @@ function fecharInterno(){
 
 
 /* ========================= */
-/* FECHAR CLICANDO FORA */
+/* FECHAR MODAL */
 /* ========================= */
 
 
@@ -1612,7 +1675,9 @@ function filtrar(){
 
                 card.style.display="block";
 
-            }else{
+            }
+
+            else{
 
                 card.style.display="none";
 
@@ -1637,7 +1702,9 @@ function categoria(cat){
     .forEach(
         function(card){
 
-            if(cat==="Todos"){
+            if(
+                cat==="Todos"
+            ){
 
                 card.style.display="block";
 
@@ -1656,7 +1723,9 @@ function categoria(cat){
 
                 card.style.display="block";
 
-            }else{
+            }
+
+            else{
 
                 card.style.display="none";
 
@@ -1670,7 +1739,7 @@ function categoria(cat){
 
 
 /* ========================= */
-/* FORMATAÇÃO DE DINHEIRO */
+/* DINHEIRO */
 /* ========================= */
 
 
@@ -1682,9 +1751,42 @@ function dinheiro(valor){
             style:"currency",
             currency:"BRL"
         }
-    ).format(
+    )
+    .format(
         Number(valor)||0
     );
+
+}
+
+
+
+/* ========================= */
+/* NÚMERO */
+/* ========================= */
+
+
+function numero(id){
+
+    const valor =
+        Number(
+            document
+            .getElementById(id)
+            .value
+        );
+
+
+    if(
+        !Number.isFinite(valor)
+        ||
+        valor<0
+    ){
+
+        return 0;
+
+    }
+
+
+    return valor;
 
 }
 
@@ -1749,7 +1851,7 @@ document
             .trim();
 
 
-        const numero =
+        const numeroEndereco =
             document
             .getElementById("numero")
             .value
@@ -1804,9 +1906,10 @@ document
 
 
         const endereco =
+
             [
                 rua,
-                numero,
+                numeroEndereco,
                 bairro,
                 cidade,
                 estado,
@@ -1830,7 +1933,7 @@ document
 
 ⏰ Horário: ${hora}
 
-📍 Endereço:
+📍 Endereço do evento:
 ${endereco}
 
 🎉 Evento:
@@ -1850,6 +1953,7 @@ ${observacoes || "Nenhuma"}`;
 
 
         const link =
+
             "https://wa.me/?text=" +
             encodeURIComponent(mensagem);
 
@@ -1858,14 +1962,461 @@ ${observacoes || "Nenhuma"}`;
         .getElementById("clienteMsg")
         .innerHTML =
 
-        `
-        <div class="success">
+`
+<div class="success">
 
-        Solicitação preparada.
+Solicitação preparada.
 
-        </div>
+</div>
 
-        <a
-            class="primary"
-            style="
-            display:
+<a
+    class="primary"
+    style="
+    display:block;
+    text-align:center;
+    text-decoration:none;
+    "
+    target="_blank"
+    href="${link}"
+>
+
+📲 ENVIAR PELO WHATSAPP
+
+</a>
+`;
+
+    }
+);
+
+
+
+/* ========================= */
+/* CÁLCULO */
+/* ========================= */
+
+
+document
+.getElementById("calcularBtn")
+.addEventListener(
+    "click",
+    calcular
+);
+
+
+function calcular(){
+
+
+    /* DISTÂNCIA */
+
+    const kmIda =
+        numero("kmManual");
+
+
+    const idaVolta =
+        document
+        .getElementById("idaVolta")
+        .checked;
+
+
+    let kmTotal =
+        kmIda;
+
+
+    if(
+        idaVolta
+    ){
+
+        kmTotal =
+            kmIda * 2;
+
+    }
+
+
+
+    /* TRANSPORTE */
+
+    const valorKm =
+        numero("valorKm");
+
+
+    const transporte =
+        kmTotal * valorKm;
+
+
+
+    /* EXTRAS */
+
+    const pedagio =
+        numero("pedagio");
+
+
+    const estacionamento =
+        numero("estacionamento");
+
+
+    const alimentacao =
+        numero("alimentacao");
+
+
+    const hospedagem =
+        numero("hospedagem");
+
+
+    const outros =
+        numero("outros");
+
+
+    const extras =
+
+        pedagio +
+        estacionamento +
+        alimentacao +
+        hospedagem +
+        outros;
+
+
+
+    /* MÚSICOS */
+
+    const musicos =
+
+        Array
+        .from(
+            document
+            .querySelectorAll(".musico")
+        )
+        .reduce(
+            function(total,input){
+
+                return total +
+                (
+                    Number(input.value)||0
+                );
+
+            },
+            0
+        );
+
+
+
+    /* APRESENTAÇÃO */
+
+    const cache =
+        numero("cache");
+
+
+
+    /* NOTA FISCAL */
+
+    const nfPercent =
+        numero("nfPercent");
+
+
+    const valorNF =
+
+        cache *
+        (
+            nfPercent /
+            100
+        );
+
+
+
+    /* CUSTO TOTAL */
+
+    const custoTotal =
+
+        transporte +
+        extras +
+        musicos +
+        valorNF;
+
+
+
+    /* VALOR DE VENDA */
+
+    const valorVenda =
+        numero("valorVenda");
+
+
+    /* RESULTADO */
+
+    const resultado =
+
+        valorVenda -
+        custoTotal;
+
+
+
+    /* RESULTADO TRANSPORTE */
+
+    document
+    .getElementById(
+        "resultadoInterno"
+    )
+    .innerHTML =
+
+`
+<strong>
+Distância considerada:
+</strong>
+
+${kmTotal.toFixed(1)} km
+
+<br>
+
+<strong>
+Transporte:
+</strong>
+
+${dinheiro(transporte)}
+
+<br>
+
+<strong>
+Pedágio:
+</strong>
+
+${dinheiro(pedagio)}
+
+<br>
+
+<strong>
+Estacionamento:
+</strong>
+
+${dinheiro(estacionamento)}
+
+<br>
+
+<strong>
+Alimentação:
+</strong>
+
+${dinheiro(alimentacao)}
+
+<br>
+
+<strong>
+Hospedagem:
+</strong>
+
+${dinheiro(hospedagem)}
+
+<br>
+
+<strong>
+Outros custos:
+</strong>
+
+${dinheiro(outros)}
+
+`;
+
+
+
+    /* RESUMO */
+
+    document
+    .getElementById(
+        "resumoFinanceiro"
+    )
+    .innerHTML =
+
+`
+<strong>
+🎤 Valor da apresentação:
+</strong>
+
+${dinheiro(cache)}
+
+<br>
+
+<strong>
+🎵 Cachês dos músicos:
+</strong>
+
+${dinheiro(musicos)}
+
+<br>
+
+<strong>
+🧾 Nota Fiscal (${nfPercent}%):
+</strong>
+
+${dinheiro(valorNF)}
+
+<br>
+
+<strong>
+🚗 Transporte:
+</strong>
+
+${dinheiro(transporte)}
+
+<br>
+
+<strong>
+➕ Outros custos:
+</strong>
+
+${dinheiro(extras)}
+
+<hr>
+
+<strong>
+CUSTO TOTAL:
+</strong>
+
+${dinheiro(custoTotal)}
+
+<br><br>
+
+<strong>
+💵 VALOR FINAL AO CLIENTE:
+</strong>
+
+${dinheiro(valorVenda)}
+
+<br><br>
+
+<strong>
+📈 RESULTADO:
+</strong>
+
+<span class="money">
+
+${dinheiro(resultado)}
+
+</span>
+
+`;
+
+}
+
+
+
+/* ========================= */
+/* GERAR PROPOSTA */
+/* ========================= */
+
+
+function gerarProposta(){
+
+
+    const nome =
+        document
+        .getElementById("nome")
+        .value
+        .trim();
+
+
+    const data =
+        document
+        .getElementById("data")
+        .value;
+
+
+    const hora =
+        document
+        .getElementById("hora")
+        .value;
+
+
+    const formacao =
+        document
+        .getElementById("formacao")
+        .value;
+
+
+    const valorVenda =
+        numero("valorVenda");
+
+
+    if(
+        valorVenda<=0
+    ){
+
+        alert(
+            "Informe o valor final da proposta."
+        );
+
+        return;
+
+    }
+
+
+    const texto =
+
+`Olá, ${nome || "tudo bem"}! 😊
+
+Temos prazer em apresentar a proposta do AdaSamba para o seu evento. 🎶
+
+🎤 Formação:
+${formacao || "A combinar"}
+
+📅 Data:
+${data || "A combinar"}
+
+⏰ Horário:
+${hora || "A combinar"}
+
+💰 Investimento:
+${dinheiro(valorVenda)}
+
+Caso esteja de acordo, podemos avançar com os detalhes da contratação.
+
+🎶 AdaSamba
+Samba, Pagode e MPB para o seu evento.`;
+
+
+    const url =
+
+        "https://wa.me/?text=" +
+        encodeURIComponent(texto);
+
+
+    window.open(
+        url,
+        "_blank"
+    );
+
+}
+
+
+
+/*
+====================================================
+GOOGLE MAPS
+====================================================
+
+A estrutura está preparada para a integração.
+
+Quando a Google Maps Platform for configurada,
+o sistema poderá:
+
+• sugerir endereços;
+• preencher rua;
+• preencher bairro;
+• preencher CEP;
+• preencher cidade;
+• obter coordenadas;
+• calcular a rota;
+• calcular a distância;
+• calcular o transporte.
+
+Por enquanto, o campo "Distância — km" na área
+interna permite informar a distância manualmente.
+
+NÃO coloque uma chave de API aqui sem configurar
+corretamente as restrições da chave.
+
+====================================================
+*/
+
+
+</script>
+
+
+</body>
+</html>
