@@ -618,7 +618,33 @@ footer strong{
                 </option>
 
             </select>
+<label for="som">
+🔊 Estrutura de som do evento
+</label>
 
+<select id="som">
+
+    <option value="">
+        Selecione
+    </option>
+
+    <option>
+        🎤 Já tenho equipamento de som
+    </option>
+
+    <option>
+        🎶 Não tenho — preciso contratar o som
+    </option>
+
+    <option>
+        🥁 Samba acústico — sem equipamento de som
+    </option>
+
+    <option>
+        ❓ Ainda não sei — preciso de orientação
+    </option>
+
+    </select>
 
             <button
                 type="button"
@@ -790,17 +816,18 @@ function enviar(){
         document.getElementById("camisa").value;
 
 
-    if(
-        !nome ||
-        !telefone ||
-        !data ||
-        !hora ||
-        !local ||
-        !evento ||
-        !formacao ||
-        !notaFiscal ||
-        !camisa
-    ){
+   if(
+    !nome ||
+    !telefone ||
+    !data ||
+    !hora ||
+    !local ||
+    !evento ||
+    !formacao ||
+    !notaFiscal ||
+    !camisa ||
+    !som
+){
 
         alert(
             "Por favor, preencha todos os campos."
@@ -850,11 +877,15 @@ function enviar(){
         "%0A" +
 
         "👕 Cor da camisa: " +
-        encodeURIComponent(camisa) +
-        "%0A%0A" +
+encodeURIComponent(camisa) +
+"%0A%0A" +
 
-        "Gostaria de receber informações " +
-        "sobre disponibilidade e orçamento.";
+"🔊 Estrutura de som: " +
+encodeURIComponent(document.getElementById("som").value) +
+"%0A%0A" +
+
+"Gostaria de receber informações " +
+"sobre disponibilidade e orçamento.";
 
 
     const numero =
